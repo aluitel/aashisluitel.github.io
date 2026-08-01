@@ -1,34 +1,178 @@
-{% assign article_description = page.description | default: "An essay by Aashis Luitel on AI governance, cybersecurity, public-sector technology and practice." %} {% assign article_image = page.image | default: "/assets/images/aashis-hero.jpg" %} Skip to content
-Aashis LuitelD.Eng., MPA  Menu
-Home About Practice Teaching & Research Writing & Media Blog Speaking Contact
-← All essays {{ page.category | default: "Essay" }}
-{{ page.title }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% assign article_description = page.description | default: "An essay by Aashis Luitel on AI governance, cybersecurity, public-sector technology and practice." %}
+{% assign article_image = page.image | default: "/assets/images/aashis-hero.jpg" %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }} | Aashis Luitel</title>
+<meta name="description" content="{{ article_description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
 
-{{ article_description }}
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Aashis Luitel">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ article_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ article_image | absolute_url }}">
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta name="twitter:card" content="summary_large_image">
 
-{{ page.date | date: "%B %-d, %Y" }}  ·  Aashis Luitel
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
 
-{% if page.image %}
-{{ page.image_alt | default: page.title | escape }} {% if page.image_caption %}
-{{ page.image_caption }}
-{% endif %}
-{% endif %}
-{{ content }}
-← Return to all essays
-Aashis Luitel
+<style>
+  .post-head{padding-bottom:clamp(2.5rem,5vw,4rem);border-bottom:1px solid var(--rule)}
+  .post-back{display:inline-block;margin-bottom:2rem;font-size:.88rem;text-decoration:none}
+  .post-head h1{max-width:17ch}
+  .post-head .lede{margin-top:1.25rem;max-width:42rem}
+  .post-meta{margin-top:1.35rem;color:var(--muted);font-size:.84rem}
+  .post-image{max-width:62rem;margin:0 auto;padding:0 var(--pad)}
+  .post-image img{width:100%;max-height:42rem;object-fit:cover}
+  .post-image figcaption{margin-top:.55rem;color:var(--muted);font-size:.78rem}
+  .post-body{font-family:var(--serif);font-size:clamp(1.08rem,1.7vw,1.22rem);line-height:1.78}
+  .post-body p{margin-bottom:1.45rem}
+  .post-body h2{margin:2.8rem 0 1rem;font-size:clamp(1.55rem,3vw,2.15rem)}
+  .post-body h3{margin:2.2rem 0 .8rem}
+  .post-body ul,.post-body ol{margin:0 0 1.5rem;padding-left:1.5rem}
+  .post-body li{margin-bottom:.55rem}
+  .post-body blockquote{margin:2rem 0;padding:.2rem 0 .2rem 1.4rem;border-left:3px solid var(--copper);color:var(--ink-2);font-style:italic}
+  .post-body hr{border:0;border-top:1px solid var(--rule);margin:2.7rem 0}
+  .post-body img{margin:2rem auto}
+  .post-body code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.84em;background:var(--paper-2);padding:.12em .28em}
+  .post-body pre{overflow-x:auto;background:var(--ink);color:var(--paper);padding:1.2rem;font-size:.88rem;line-height:1.55}
+  .post-body pre code{background:none;padding:0;color:inherit}
+  .post-end{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;font-family:var(--sans);font-size:.9rem}
+</style>
 
-Public-sector security and AI governance, built in practice and taught in the classroom.
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ article_description | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ page.url | absolute_url | jsonify }}
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ page.date | date_to_xmlschema }}{% endif %}",
+  "image": {{ article_image | absolute_url | jsonify }},
+  "author": {
+    "@type": "Person",
+    "@id": "https://aashisluitel.com/#person",
+    "name": "Aashis Luitel",
+    "url": "https://aashisluitel.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://aashisluitel.com/#person",
+    "name": "Aashis Luitel"
+  }
+}
+</script>
+</head>
 
-Explore
+<body>
+<a class="skip" href="#main">Skip to content</a>
 
-About
-Practice
-Teaching & Research
-Writing & Media
-Blog
-Elsewhere
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="/">Aashis Luitel<span>D.Eng., MPA</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span class="menu-label">Menu</span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/practice.html">Practice</a>
+      <a href="/teaching.html">Teaching &amp; Research</a>
+      <a href="/writing.html">Writing &amp; Media</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/speaking.html">Speaking</a>
+      <a class="btn-sm" href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-contact@aashisluitel.com
-LinkedIn
-All writing
-© 2026 Aashis Luitel Views expressed here are my own and do not represent any employer or institution.
+<main id="main">
+  <section class="sec post-head">
+    <div class="wrap narrow">
+      <a class="post-back" href="/blog/">&larr; All essays</a>
+      <span class="eyebrow">{{ page.category | default: "Essay" }}</span>
+      <h1>{{ page.title }}</h1>
+      <p class="lede">{{ article_description }}</p>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        &nbsp;&middot;&nbsp; Aashis Luitel
+      </p>
+    </div>
+  </section>
+
+  {% if page.image %}
+  <section class="sec">
+    <figure class="post-image">
+      <img src="{{ page.image }}" alt="{{ page.image_alt | default: page.title | escape }}">
+      {% if page.image_caption %}<figcaption>{{ page.image_caption }}</figcaption>{% endif %}
+    </figure>
+  </section>
+  {% endif %}
+
+  <section class="sec">
+    <article class="wrap narrow post-body">
+      {{ content }}
+      <div class="post-end"><a href="/blog/">&larr; Return to all essays</a></div>
+    </article>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Aashis Luitel</h4>
+        <p style="color:var(--ink-2);max-width:26rem">Public-sector security and AI governance, built in practice and taught in the classroom.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/practice.html">Practice</a></li>
+          <li><a href="/teaching.html">Teaching &amp; Research</a></li>
+          <li><a href="/writing.html">Writing &amp; Media</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:contact@aashisluitel.com">contact@aashisluitel.com</a></li>
+          <li><a href="https://www.linkedin.com/in/ashluitel/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="/writing.html">All writing</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <span>&copy; 2026 Aashis Luitel</span>
+      <span>Views expressed here are my own and do not represent any employer or institution.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  document.querySelectorAll('.post-body a[href^="http"]').forEach(function (link) {
+    if (link.hostname !== window.location.hostname) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+  });
+</script>
+</body>
+</html>
