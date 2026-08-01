@@ -1,3 +1,13 @@
+---
+title: "Why I Refuse to Choose Between Industry and Academia"
+date: 2026-08-01
+description: "Working at Microsoft while studying at Harvard drew me toward teaching and made the divide between those building AI and those studying its consequences impossible to ignore."
+category: "AI and institutions"
+permalink: /blog/between-industry-and-academia/
+---
+
+*This essay was first published in [Between Systems](https://ashluitel.substack.com/p/why-i-refuse-to-choose-between-industry-58d), my Substack publication.*
+
 Artificial intelligence is moving too quickly for universities to study it from a distance, and it is too consequential for industry to govern it alone.
 
 This reality exposes a structural weakness in how knowledge is produced, taught, and applied.
@@ -14,7 +24,7 @@ These systems are no longer confined to research laboratories or experimental pr
 
 The central questions are therefore no longer limited to model performance. We must also ask who is authorized to deploy these systems, who remains accountable for their outputs, whose knowledge is embedded in them, whose labor they displace, and who ultimately receives the value they create. Neither industry nor academia can answer those questions alone.
 
-The Redefinition of Expertise
+## The Redefinition of Expertise
 
 AI is not merely changing the tools used within existing professions. It is changing the meaning of the professions themselves.
 
@@ -34,7 +44,7 @@ The definition of expertise is changing with it. Knowing the answer matters less
 
 These changes cannot be understood from a classroom alone. They also cannot be understood from a product roadmap alone.
 
-The Friction of Practice
+## The Friction of Practice
 
 My work has placed me inside the tension between these institutions.
 
@@ -46,6 +56,55 @@ That constraint produces discipline. It forces abstract principles into architec
 
 The classroom creates the opposite condition.
 
+When I teach AI governance, cybersecurity, and responsible technology, students are not constrained by a release calendar. They can ask whether a system should exist before deciding how it should be deployed. They can challenge whether compliance is functioning as evidence of responsible practice or merely as proof that a required process occurred. They can examine who benefits from automation, who bears the risk, and what happens when technical capability advances faster than institutional accountability.
+
+Those questions change how I return to industry.
+
+Industry teaches me that principles without implementation remain abstractions. Academia reminds me that implementation without examination can normalize weak assumptions at scale.
+
+Each environment exposes what the other routinely misses.
+
+That is why I refuse to choose between them.
+
+## The Value of Crossing Boundaries
+
+I did not arrive at this intersection through a conventional academic or technology career.
+
+I grew up in Nepal, where English was my second language and modern technology entered my early life gradually. I later served in the U.S. Navy before moving through graduate education, Microsoft’s AI and security programs, public-sector security, and university teaching.
+
+The significance of that path is not the sequence of institutions or credentials. It is the analytical habit the path required: entering unfamiliar systems, learning how they actually operate, and recognizing the distance between their stated purpose and their lived reality.
+
+Military service taught me that responsibility cannot be separated from execution. Graduate study taught me to examine the assumptions beneath accepted practice. Work in technology taught me how quickly technical decisions become institutional facts. Teaching has shown me how differently the next generation understands knowledge, authority, and work.
+
+Those lessons converge in the AI era. The systems now being built will shape not only how tasks are completed, but how companies are organized, how students learn, how governments exercise authority, and how economic value is distributed. The people building those systems need the discipline to examine their consequences, while the people studying those consequences need sustained contact with the environments in which the systems are designed and deployed.
+
+The goal is not to erase the distinction between industry and academia. Their independence serves a purpose. Universities must retain the freedom to question commercial priorities, while industry must retain the capacity to make decisions under operational, regulatory, and commercial constraints. What is needed is not institutional convergence, but a more deliberate exchange between the two.
+
+I have been explicit about that commitment in both settings. My employer knows I teach, my university knows I practice, and I have treated that transparency as a condition of doing either job honestly. The dual role works because neither institution is asked to pretend the other does not exist.
+
+That arrangement reflects a broader institutional principle. Moving between industry and academia works only when both recognize the relationship as an asset rather than a competing obligation. Industry gains a practitioner whose assumptions are continually tested through teaching and scholarship. Students gain a professor whose understanding of AI governance, security, and implementation remains grounded in current systems, constraints, and decisions.
+
+Professors should continue building because practice reveals where theory fails under pressure. Practitioners should continue teaching because explaining a system forces its assumptions into the open. Researchers should spend time with operational teams, and product leaders should remain engaged with scholarship that challenges the incentives and blind spots of their own institutions.
+
+AI requires people who can move between these worlds without confusing their purposes, weakening their independence, or abandoning the responsibilities of either.
+
+## The Institutional Challenge
+
+The future of AI will not be determined solely by larger models, faster inference, or more capable agents. It will be determined by the institutions that decide how those systems are built, taught, governed, and distributed.
+
+Industry cannot carry that responsibility alone because commercial incentives, however legitimate, are necessarily incomplete. Academia cannot carry it alone because theories that never encounter operational constraints eventually become detached from the systems they seek to explain.
+
+The harder questions sit between them.
+
+What happens when AI increases productivity without creating an equivalent number of jobs? What does it mean to educate students when answers are abundant but judgment remains scarce? How should companies be governed when intelligent agents perform work once assigned to people? What obligations arise when private firms capture the economic gains of systems whose consequences are distributed across society?
+
+These are technical, institutional, economic, and moral questions. Answering them requires evidence from practice, discipline from scholarship, and accountability from both.
+
+In the essays that follow, I will examine that intersection: where AI engineering meets governance, where commercial capability meets public responsibility, and where technological progress forces us to reconsider the institutions we inherited.
+
+I intend to keep building and teaching because each reveals what the other cannot see clearly from within its own boundaries.
+
+Most of all, I intend to keep asking who benefits, who decides, and who remains accountable as AI changes the meaning of work, expertise, and institutional power.
 When I teach AI governance, cybersecurity, and responsible technology, students are not constrained by a release calendar. They can ask whether a system should exist before deciding how it should be deployed. They can challenge whether compliance is functioning as evidence of responsible practice or merely as proof that a required process occurred. They can examine who benefits from automation, who bears the risk, and what happens when technical capability advances faster than institutional accountability.
 
 Those questions change how I return to industry.
