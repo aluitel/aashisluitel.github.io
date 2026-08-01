@@ -5,6 +5,19 @@
 */
 (function () {
   'use strict';
+/* ---------- Google Analytics ---------- */
+  var googleTag = document.createElement('script');
+  googleTag.async = true;
+  googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-YP287B6VY3';
+  document.head.appendChild(googleTag);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-YP287B6VY3');
 
   /* ---------- 1. mobile menu ---------- */
   var btn = document.querySelector('.menu-btn');
