@@ -9,7 +9,23 @@
   /* ---------- 1. mobile menu ---------- */
   var btn = document.querySelector('.menu-btn');
   var nav = document.getElementById('primary-nav');
+  /* ---------- add blog to shared navigation ---------- */
+  if (nav) {
+    var writingLink = nav.querySelector('a[href$="writing.html"]');
+    var blogLink = nav.querySelector('a[href="/blog/"]');
 
+    if (!blogLink && writingLink) {
+      blogLink = document.createElement('a');
+      blogLink.href = '/blog/';
+      blogLink.textContent = 'Blog';
+      writingLink.insertAdjacentElement('afterend', blogLink);
+    }
+
+    if (blogLink && window.location.pathname.indexOf('/blog/') === 0) {
+      if (writingLink) writingLink.removeAttribute('aria-current');
+      blogLink.setAttribute('aria-current', 'page');
+    }
+  }
   if (btn && nav) {
     var setOpen = function (open) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
