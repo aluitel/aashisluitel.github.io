@@ -26,6 +26,26 @@
       blogLink.setAttribute('aria-current', 'page');
     }
   }
+     /* ---------- add blog to shared footer ---------- */
+  var footer = document.querySelector('.site-foot');
+
+  if (footer && !footer.querySelector('a[href="/blog/"]')) {
+    var footerWritingLink = footer.querySelector('a[href$="writing.html"]');
+
+    if (footerWritingLink) {
+      var footerWritingItem = footerWritingLink.closest('li');
+
+      if (footerWritingItem) {
+        var footerBlogItem = document.createElement('li');
+        var footerBlogLink = document.createElement('a');
+
+        footerBlogLink.href = '/blog/';
+        footerBlogLink.textContent = 'Blog';
+        footerBlogItem.appendChild(footerBlogLink);
+        footerWritingItem.insertAdjacentElement('afterend', footerBlogItem);
+      }
+    }
+  }
   if (btn && nav) {
     var setOpen = function (open) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
