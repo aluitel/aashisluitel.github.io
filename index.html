@@ -3,305 +3,206 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aashis Luitel | AI Ethics, Trust, and Assurance</title>
-<meta name="description" content="Aashis Luitel, D.Eng., is Associate Professor of Artificial Intelligence at the University of the Cumberlands. He helped build Microsoft Security Copilot, the industry's first generative AI security platform, and leads public sector security programs at N-able Technologies. U.S. Navy veteran. Aurora, Colorado.">
+<title>Aashis Luitel | Public-Sector Security and AI Governance</title>
+<meta name="description" content="Aashis Luitel, D.Eng., MPA. Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Formerly Microsoft Security Copilot and cloud and AI security.">
 <link rel="canonical" href="https://aashisluitel.com/">
-<meta name="theme-color" content="#0A0E14">
-
-<meta property="og:type" content="profile">
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="Aashis Luitel">
-<meta property="og:title" content="Aashis Luitel | AI Ethics, Trust, and Assurance">
-<meta property="og:description" content="Associate Professor of Artificial Intelligence, University of the Cumberlands. Product and program leadership on Microsoft Security Copilot, the industry's first generative AI security platform.">
+<meta property="og:title" content="Aashis Luitel | Public-Sector Security and AI Governance">
+<meta property="og:description" content="Aashis Luitel, D.Eng., MPA. Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Formerly Microsoft Security Copilot and cloud and AI security.">
 <meta property="og:url" content="https://aashisluitel.com/">
+<meta property="og:image" content="https://aashisluitel.com/assets/images/aashis-hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
-<!-- EDIT: og:image (1200x630) and id="mail" address -->
-
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org","@type":"Person","name":"Aashis Luitel","honorificPrefix":"Dr.",
+  "@context":"https://schema.org","@type":"Person",
+  "name":"Aashis Luitel","honorificSuffix":"D.Eng., MPA",
   "url":"https://aashisluitel.com/",
-  "sameAs":["https://www.linkedin.com/in/ashluitel/","https://substack.com/@aashisluitel","https://www.ucumberlands.edu/directory/dr-aashis-luitel","https://sps.wfu.edu/profiles/aashis-luitel/"],
   "jobTitle":["Associate Professor of Artificial Intelligence","Lead Technical Program Manager, Public Sector Security"],
   "worksFor":[{"@type":"CollegeOrUniversity","name":"University of the Cumberlands"},{"@type":"Organization","name":"N-able Technologies"}],
   "alumniOf":[{"@type":"CollegeOrUniversity","name":"The George Washington University"},{"@type":"CollegeOrUniversity","name":"Harvard Kennedy School"}],
   "address":{"@type":"PostalAddress","addressLocality":"Aurora","addressRegion":"CO","addressCountry":"US"},
-  "knowsAbout":["AI ethics","Responsible AI","AI governance","Trustworthy AI","Cloud security","FedRAMP","CMMC"]
+  "knowsAbout":["AI governance","Responsible AI","Public sector security","FedRAMP","CMMC","Cloud security"],
+  "sameAs":["https://www.linkedin.com/in/ashluitel/","https://substack.com/@aashisluitel","https://www.ucumberlands.edu/directory/dr-aashis-luitel","https://www.informationweek.com/author/aashis-luitel","https://coloradosun.com/author/aashis-luitel/"]
 }
 </script>
-
-<style>
-:root{
-  --void:#0A0E14; --void-2:#141B24; --void-rule:#232C38; --void-text:#A8B4C2;
-  --paper:#FAFBFC; --ink:#10151C; --slate:#5B6672; --rule:#DFE3E8; --chip:#EDF2FE;
-  --accent:#1B4FD8; --accent-lit:#7BA4FF; --measure:37rem;
-}
-*{box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased;}
-a{color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px;}
-a:hover{color:var(--ink);}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
-.wrap{max-width:64rem;margin:0 auto;padding:0 1.6rem;}
-.tag{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.69rem;letter-spacing:.17em;text-transform:uppercase;}
-
-#bar{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(250,251,252,.9);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);transform:translateY(-102%);transition:transform .3s ease;}
-#bar.on{transform:none;}
-#bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.65rem;padding-bottom:.65rem;}
-#bar .nm{font-family:"Space Grotesk",sans-serif;font-weight:600;letter-spacing:-.02em;font-size:.98rem;}
-#bar .lk{font-family:"IBM Plex Mono",monospace;font-size:.72rem;text-decoration:none;}
-@media (max-width:30rem){#bar .lk{display:none;}}
-
-.hero{background:var(--void);color:#fff;padding:6.5rem 0 4.4rem;position:relative;overflow:hidden;}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;
-  background:linear-gradient(90deg,var(--accent-lit),transparent 62%);}
-.hero .tag{color:var(--void-text);}
-.eyebrow{display:flex;gap:.8rem;align-items:center;}
-.eyebrow .bar-line{flex:0 0 2rem;height:1px;background:var(--accent-lit);}
-.name{font-family:"Space Grotesk",sans-serif;font-weight:700;color:#fff;
-  font-size:clamp(3rem,9.5vw,6.4rem);line-height:.94;letter-spacing:-.045em;margin:1.1rem 0 0;}
-.role{margin:1.4rem 0 0;max-width:41rem;font-size:1.06rem;color:var(--void-text);}
-.role strong{color:#fff;font-weight:600;}
-.thesis{margin:2.8rem 0 0;max-width:43rem;color:#E8EDF3;
-  font-family:"Space Grotesk",sans-serif;font-weight:500;
-  font-size:clamp(1.18rem,2.5vw,1.5rem);line-height:1.38;letter-spacing:-.02em;}
-.thesis b{color:#fff;font-weight:600;}
-
-.manifest{margin-top:3rem;border:1px solid var(--void-rule);background:var(--void-2);max-width:49rem;}
-.manifest-h{display:flex;justify-content:space-between;align-items:center;padding:.6rem .95rem;border-bottom:1px solid var(--void-rule);}
-.manifest-h .tag{color:var(--void-text);}
-.dot{width:6px;height:6px;border-radius:50%;background:var(--accent-lit);display:inline-block;margin-right:.55rem;vertical-align:middle;}
-.manifest dl{margin:0;padding:.85rem .95rem;display:grid;grid-template-columns:8rem 1fr;gap:.4rem 1.2rem;}
-.manifest dt{font-family:"IBM Plex Mono",monospace;font-size:.76rem;color:#6F7D8C;}
-.manifest dd{margin:0;font-size:.93rem;color:#DCE3EB;}
-
-section{border-top:1px solid var(--rule);padding:3.4rem 0;}
-.head{display:flex;gap:1rem;align-items:baseline;margin-bottom:1.7rem;}
-.code{font-family:"IBM Plex Mono",monospace;font-size:.71rem;font-weight:500;letter-spacing:.1em;
-  color:var(--accent);background:var(--chip);border:1px solid #D2E0FB;padding:.2rem .5rem;white-space:nowrap;}
-h2{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.42rem;margin:0;letter-spacing:-.025em;}
-p{max-width:var(--measure);}
-section p:first-of-type{margin-top:0;}
-
-.entry{border-left:2px solid var(--rule);padding-left:1.15rem;margin-bottom:1.9rem;transition:border-color .2s;}
-.entry:hover{border-left-color:var(--accent);}
-.entry:last-child{margin-bottom:0;}
-.entry h3{font-family:"Space Grotesk",sans-serif;font-size:1.08rem;font-weight:600;margin:0 0 .1rem;letter-spacing:-.02em;}
-.meta{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--slate);margin:0 0 .55rem;}
-.entry p{margin:0 0 .6rem;}
-.entry p:last-child{margin-bottom:0;}
-
-.course{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;padding:.75rem 0;border-top:1px solid var(--rule);max-width:var(--measure);}
-.course:first-of-type{border-top:none;}
-.course .num{font-family:"IBM Plex Mono",monospace;font-size:.8rem;color:var(--accent);font-weight:500;min-width:7rem;}
-.course .t{font-weight:600;}
-.course .term{font-family:"IBM Plex Mono",monospace;font-size:.71rem;color:var(--slate);}
-
-ul.plain{list-style:none;padding:0;margin:0;max-width:var(--measure);}
-ul.plain li{padding:.62rem 0;border-top:1px solid var(--rule);}
-ul.plain li:first-child{border-top:none;padding-top:0;}
-
-.pub{display:flex;gap:1rem;justify-content:space-between;align-items:baseline;flex-wrap:wrap;
-  padding:1rem .6rem 1rem 0;border-top:1px solid var(--rule);text-decoration:none;color:inherit;max-width:49rem;
-  transition:padding-left .2s,background .2s;}
-.pub:first-of-type{border-top:none;}
-.pub:hover{padding-left:.6rem;background:var(--chip);}
-.pub-t{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:1.04rem;letter-spacing:-.02em;flex:1 1 22rem;}
-.pub:hover .pub-t{color:var(--accent);}
-.pub-m{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--slate);white-space:nowrap;}
-
-footer{border-top:1px solid var(--rule);padding:3rem 0 5rem;}
-.contact a{display:inline-block;margin:0 1.8rem .4rem 0;font-weight:600;
-  font-family:"Space Grotesk",sans-serif;font-size:1.05rem;letter-spacing:-.015em;}
-.elsewhere{margin-top:1.6rem;display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;max-width:44rem;}
-.elsewhere a{font-family:"IBM Plex Mono",monospace;font-size:.76rem;text-decoration:none;
-  border-bottom:1px solid var(--rule);padding-bottom:.15rem;}
-.elsewhere a:hover{border-bottom-color:var(--accent);}
-.fine{font-family:"IBM Plex Mono",monospace;font-size:.7rem;color:var(--slate);margin-top:2.2rem;line-height:1.75;}
-
-@media (max-width:36rem){
-  .head{flex-direction:column;gap:.5rem;}
-  .code{align-self:flex-start;}
-  .hero{padding:4rem 0 3rem;}
-  .manifest dl{grid-template-columns:1fr;gap:.05rem;}
-  .manifest dt{margin-top:.6rem;}
-  .course .num{min-width:0;}
-}
-@media (prefers-reduced-motion:no-preference){
-  .rise{opacity:0;transform:translateY(11px);animation:rise .6s cubic-bezier(.2,.7,.3,1) forwards;}
-  .rise:nth-child(2){animation-delay:.06s;} .rise:nth-child(3){animation-delay:.13s;}
-  .rise:nth-child(4){animation-delay:.2s;}  .rise:nth-child(5){animation-delay:.27s;}
-  @keyframes rise{to{opacity:1;transform:none;}}
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);}
-  .reveal.seen{opacity:1;transform:none;}
-}
-</style>
-</head>
-<body>
-
-<div id="bar">
-  <div class="wrap">
-    <span class="nm">Aashis Luitel</span>
-    <a class="lk" href="#poc">contact &rarr;</a>
-  </div>
-</div>
-
-<header class="hero">
-  <div class="wrap">
-    <span class="tag eyebrow rise"><span class="bar-line"></span>Aurora, Colorado</span>
-    <h1 class="name rise">Aashis<br>Luitel</h1>
-    <p class="role rise">
-      <strong>Associate Professor of Artificial Intelligence</strong>, University of the Cumberlands.
-      <strong>Lead Technical Program Manager</strong>, N-able Technologies.
-      Product and program leadership on <strong>Microsoft Security Copilot</strong>, the industry&rsquo;s first generative AI security platform.
-    </p>
-    <p class="thesis rise">Trustworthy AI is not a principle an organization publishes. <b>It is a property someone outside the room can verify.</b> My work sits where ethical commitments become architecture decisions, and where those decisions become evidence.</p>
-
-    <div class="manifest rise">
-      <div class="manifest-h">
-        <span class="tag"><span class="dot"></span>Current scope</span>
-        <span class="tag">2026</span>
-      </div>
-      <dl>
-        <dt>focus</dt><dd>AI ethics, trust, and assurance engineering</dd>
-        <dt>teaching</dt><dd>PhD and Executive Master&rsquo;s in Artificial Intelligence</dd>
-        <dt>practice</dt><dd>Public sector security and AI governance programs</dd>
-        <dt>built</dt><dd>Responsible AI, privacy, and compliance foundations for Security Copilot</dd>
-        <dt>service</dt><dd>U.S. Navy, active duty, deployed overseas</dd>
-      </dl>
-    </div>
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">Aashis Luitel<span>D.Eng., MPA</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="primary-nav">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      <span class="menu-label">Menu</span>
+    </button>
+    <nav class="nav" id="primary-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="practice.html">Practice</a>
+      <a href="teaching.html">Teaching &amp; Research</a>
+      <a href="writing.html">Writing &amp; Media</a>
+      <a href="speaking.html">Speaking</a>
+      <a class="btn-sm" href="contact.html">Contact</a>
+    </nav>
   </div>
 </header>
-
-<main>
-
-<section class="reveal">
-  <div class="wrap">
-    <div class="head"><span class="code">AT</span><h2>Teaching</h2></div>
-    <p>Faculty in the PhD and Executive Master&rsquo;s programs in Artificial Intelligence at the University of the Cumberlands, where I designed the doctoral curriculum in AI ethics and responsible AI and advise dissertation work in AI governance. I also teach in the School of Professional Studies at Wake Forest University.</p>
-    <p>Students in these courses do not study ethics as a reading list. They argue real deployments: model bias with a deadline attached, transparency traded against privacy, automated decisions nobody wants to own. The same arguments I sat in at Microsoft.</p>
-
-    <div style="margin-top:1.8rem">
-      <span class="tag" style="display:block;margin-bottom:.7rem;color:var(--slate)">Fall 2026</span>
-      <div class="course">
-        <span class="num">PhDAI 832</span>
-        <span class="t">Ethics in Responsible AI</span>
-        <span class="term">doctoral</span>
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Aashis Luitel, D.Eng., MPA</span>
+      <h1>Public-sector security and AI governance, built in practice and taught in the classroom.</h1>
+      <p class="lede">Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Previously led Responsible AI, privacy and federal readiness work across Microsoft Security Copilot and cloud and AI security.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="writing.html">Read my writing</a>
+        <a class="btn btn-ghost" href="practice.html">Explore my work</a>
+        <a class="btn btn-ghost" href="speaking.html">Speaking and media</a>
       </div>
     </div>
-    <div style="margin-top:1.6rem">
-      <span class="tag" style="display:block;margin-bottom:.7rem;color:var(--slate)">Also taught</span>
-      <div class="course"><span class="num">&mdash;</span><span class="t">Ethics in AI</span></div>
-      <div class="course"><span class="num">&mdash;</span><span class="t">Introduction to Responsible AI</span></div>
-      <div class="course"><span class="num">&mdash;</span><span class="t">Transforming Business with AI</span></div>
+    <figure class="ph ph--portrait hero-fig">
+      <img src="assets/images/aashis-hero.jpg" data-fallback="monogram" width="1000" height="1250" fetchpriority="high"
+           alt="Portrait of Aashis Luitel">
+    </figure>
+  </div>
+</section>
+
+<div class="wrap">
+  <p class="affil"><strong>University of the Cumberlands</strong> &middot; <strong>N-able</strong> &middot; Formerly <strong>Microsoft Security</strong> &middot; <strong>U.S. Navy</strong></p>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow eyebrow--blue">Builder. Owner. Educator.</span>
+      <h2>I work where AI policy becomes system design, security controls and evidence an auditor can test.</h2>
+    </div>
+    <div class="pillars">
+      <article class="pillar">
+        <span class="num">i.</span>
+        <h3>Builder</h3>
+        <p>Product and program leadership on Microsoft Security Copilot and the early agents built on it, covering Responsible AI review, privacy engineering and sovereign cloud readiness. No precedent existed for how trust should be built into a generative AI security product, so the team wrote one.</p>
+        <a class="more" href="practice.html">The practice &rarr;</a>
+      </article>
+      <article class="pillar">
+        <span class="num">ii.</span>
+        <h3>Owner</h3>
+        <p>Public-sector security program execution at N-able, including FedRAMP Moderate and CMMC 2.0 Level 2, from control implementation through evidence collection and assessment readiness. Ownership means the audit finding lands on your desk, not someone else's.</p>
+        <a class="more" href="practice.html#nable">Program work &rarr;</a>
+      </article>
+      <article class="pillar">
+        <span class="num">iii.</span>
+        <h3>Educator</h3>
+        <p>Designed Ethics in Responsible AI for the University of the Cumberlands' first PhD in Artificial Intelligence cohort. Teaches and advises doctoral students working on AI governance, responsible AI and cybersecurity.</p>
+        <a class="more" href="teaching.html">Teaching and research &rarr;</a>
+      </article>
     </div>
   </div>
 </section>
 
-<section class="reveal">
+<section class="sec sec--tint">
   <div class="wrap">
-    <div class="head"><span class="code">PM</span><h2>Practice</h2></div>
-
-    <div class="entry">
-      <h3>Microsoft Security Copilot</h3>
-      <p class="meta">Product and program leadership &middot; Responsible AI, privacy, compliance, sovereign cloud</p>
-      <p>Security Copilot was the first generative AI security product to reach market, which meant no precedent existed for how trust, safety, and ethics should be built into one. I worked across engineering, legal, and policy to turn Responsible AI principles into practices an auditor could examine, and aligned the platform to SOC 2, HIPAA, ISO 42001, and FedRAMP controls.</p>
-      <p>The durable lesson was treating regulatory expectation as a design input rather than a gate at the end. That reordering changed the architecture, not just the paperwork.</p>
+    <div class="sec-head">
+      <span class="eyebrow">Recent writing</span>
+      <h2>Commentary on AI regulation, security assurance and the gap between them</h2>
     </div>
+    <div class="cards">
+      <a class="card" href="https://www.coloradopolitics.com/2026/07/29/clock-is-ticking-on-colorados-new-ai-rules-podium/" target="_blank" rel="noopener noreferrer">
+        <figure class="ph ph--wide"><img src="assets/images/writing-colorado-politics.jpg" data-fallback="remove" width="900" height="600" loading="lazy" alt=""></figure>
+        <span class="src">Colorado Politics &middot; July 29, 2026</span>
+        <h3>Clock is ticking on Colorado's new AI rules<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></h3>
+        <p>What compliance with Colorado's automated decision-making law actually requires of the organizations inside its scope, and how little time remains to build it.</p>
+      </a>
+      <a class="card" href="https://www.informationweek.com/it-strategy/why-ai-built-tools-are-threatening-saas-vendor-renewals" target="_blank" rel="noopener noreferrer">
+        <figure class="ph ph--wide"><img src="assets/images/writing-informationweek.jpg" data-fallback="remove" width="900" height="600" loading="lazy" alt=""></figure>
+        <span class="src">InformationWeek &middot; July 7, 2026</span>
+        <h3>Why AI-built tools are threatening SaaS vendor renewals<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></h3>
+        <p>Internal teams can now build in days what they used to license. The renewal conversation has changed, and most vendors have not noticed.</p>
+      </a>
+      <a class="card" href="https://coloradosun.com/2026/05/14/opinion-colorado-defense-supplier-funding/" target="_blank" rel="noopener noreferrer">
+        <figure class="ph ph--wide"><img src="assets/images/writing-colorado-sun.jpg" data-fallback="remove" width="900" height="600" loading="lazy" alt=""></figure>
+        <span class="src">The Colorado Sun &middot; May 14, 2026</span>
+        <h3>Colorado's small defense suppliers are about to disappear<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></h3>
+        <p>CMMC compliance costs fall hardest on the smallest firms in the defense industrial base. The state has options, and a narrowing window to use them.</p>
+      </a>
+      <a class="card" href="https://www.ucumberlands.edu/stories/bridging-ai-and-ethics-dr-aashis-luitels-vision-trustworthy-innovation" target="_blank" rel="noopener noreferrer">
+        <figure class="ph ph--wide"><img src="assets/images/writing-cumberlands.jpg" data-fallback="remove" width="900" height="600" loading="lazy" alt=""></figure>
+        <span class="src">University of the Cumberlands &middot; June 4, 2026</span>
+        <h3>Bridging AI and ethics: a vision for trustworthy innovation<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></h3>
+        <p>A profile on carrying Responsible AI work from Microsoft Security Copilot into doctoral teaching. Ethics as an engineering discipline rather than a reading list.</p>
+      </a>
+    </div>
+    <div class="btn-row"><a class="btn btn-ghost" href="writing.html">View all writing</a></div>
+  </div>
+</section>
 
-    <div class="entry">
-      <h3>N-able Technologies</h3>
-      <p class="meta">Lead Technical Program Manager, Public Sector Security</p>
-      <p>Leads security and compliance programs for public-sector and defense-adjacent platforms, including FedRAMP Moderate and CMMC 2.0 Level 2, from control implementation through assessment readiness.</p>
+<section class="sec">
+  <div class="wrap split">
+    <figure class="ph ph--wide">
+      <img src="assets/images/aashis-speaking.jpg" data-fallback="Speaking" width="1200" height="800" loading="lazy"
+           alt="Aashis Luitel speaking on a panel">
+    </figure>
+    <div class="split-txt">
+      <span class="eyebrow">Speaking</span>
+      <h2>Translating governance for the people who have to implement it</h2>
+      <p>The hard part of AI governance is rarely the principle. It is the meeting where an engineer, a lawyer and a contracting officer discover they mean different things by the same word. I speak to technical, academic, policy and executive audiences about Responsible AI, CMMC, FedRAMP and what security assurance requires in operational environments.</p>
+      <p>Recent appearances include the Federal News Network Risk &amp; Compliance Exchange in 2026, on closing the CMMC evidence gap.</p>
+      <div class="btn-row"><a class="btn btn-ghost" href="speaking.html">Topics and appearances</a></div>
     </div>
   </div>
 </section>
 
-<section class="reveal">
+<section class="closing">
   <div class="wrap">
-    <div class="head"><span class="code">AU</span><h2>Recent commentary</h2></div>
-
-    <a class="pub" href="https://www.coloradopolitics.com/2026/07/29/clock-is-ticking-on-colorados-new-ai-rules-podium/">
-      <span class="pub-t">Clock is ticking on Colorado&rsquo;s new AI rules</span>
-      <span class="pub-m">Colorado Politics &middot; Jul 29, 2026</span></a>
-    <a class="pub" href="https://www.informationweek.com/it-strategy/why-ai-built-tools-are-threatening-saas-vendor-renewals">
-      <span class="pub-t">Why AI-built tools are threatening SaaS vendor renewals</span>
-      <span class="pub-m">InformationWeek &middot; Jul 2026</span></a>
-    <a class="pub" href="https://www.ucumberlands.edu/stories/bridging-ai-and-ethics-dr-aashis-luitels-vision-trustworthy-innovation">
-      <span class="pub-t">Bridging AI and ethics: a vision for trustworthy innovation</span>
-      <span class="pub-m">University of the Cumberlands &middot; Jun 4, 2026</span></a>
-    <a class="pub" href="https://federalnewsnetwork.com/it-modernization/2026/05/risk-compliance-exchange-2026-n-ables-ashish-luitel-on-addressing-the-cmmc-evidence-gap/">
-      <span class="pub-t">Addressing the CMMC evidence gap</span>
-      <span class="pub-m">Federal News Network &middot; May 2026</span></a>
-    <a class="pub" href="https://coloradosun.com/2026/05/14/opinion-colorado-defense-supplier-funding/">
-      <span class="pub-t">Colorado&rsquo;s small defense suppliers are about to disappear</span>
-      <span class="pub-m">The Colorado Sun &middot; May 14, 2026</span></a>
-    <a class="pub" href="https://substack.com/@aashisluitel">
-      <span class="pub-t">Between Systems</span>
-      <span class="pub-m">essays &middot; ongoing</span></a>
+    <h2>Open to speaking, collaboration and commentary</h2>
+    <p>Panels and keynotes, academic collaboration, media commentary on AI governance and public-sector security, or a straightforward professional conversation.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="contact.html">Get in touch</a>
+      <a class="btn btn-ghost" href="press-kit.html">Press kit</a>
+    </div>
   </div>
 </section>
-
-<section class="reveal">
-  <div class="wrap">
-    <div class="head"><span class="code">CA</span><h2>Credentials</h2></div>
-    <ul class="plain">
-      <li><strong>Doctor of Engineering</strong>, The George Washington University. Dissertation: a framework for modeling data breach risk using machine learning models for high-dimensional panel data.</li>
-      <li><strong>Master of Public Administration</strong>, Harvard Kennedy School.</li>
-      <li><strong>CMMC Registered Practitioner</strong>, Cyber AB.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="reveal">
-  <div class="wrap">
-    <div class="head"><span class="code">PS</span><h2>Before this</h2></div>
-    <p>U.S. Navy veteran. Active duty operations, deployed overseas, in assignments where documentation and verification were the condition for anything being trusted to run.</p>
-    <p>Earlier, a career in Nepali broadcast and print journalism at Nepal Television and Kantipur Daily. Those two are less unrelated than they look. Both teach the same discipline from opposite directions: a claim is worth whatever you can show behind it.</p>
-  </div>
-</section>
-
 </main>
-
-<footer id="poc">
+<footer class="site-foot">
   <div class="wrap">
-    <div class="head"><span class="code">POC</span><h2>Reach me</h2></div>
-    <p class="contact">
-      <!-- EDIT: confirm address -->
-      <a id="mail" href="mailto:contact@aashisluitel.com">contact@aashisluitel.com</a>
-      <a id="li" href="https://www.linkedin.com/in/ashluitel/">LinkedIn</a>
-    </p>
-    <div class="elsewhere">
-      <a href="https://www.ucumberlands.edu/directory/dr-aashis-luitel">Cumberlands faculty profile</a>
-      <a href="https://sps.wfu.edu/profiles/aashis-luitel/">Wake Forest profile</a>
-      <a href="https://substack.com/@aashisluitel">Between Systems</a>
+    <div class="foot-grid">
+      <div>
+        <h4>Aashis Luitel, D.Eng., MPA</h4>
+        <p style="color:var(--ink-2);max-width:26rem">Public-sector security and AI governance. Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Aurora, Colorado.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="practice.html">Practice</a></li>
+          <li><a href="teaching.html">Teaching &amp; Research</a></li>
+          <li><a href="writing.html">Writing &amp; Media</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="press-kit.html">Press kit</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="mailto:contact@aashisluitel.com">contact@aashisluitel.com</a></li>
+          <li><a href="https://www.linkedin.com/in/ashluitel/" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="https://substack.com/@aashisluitel" target="_blank" rel="noopener noreferrer">Between Systems<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+          <li><a href="https://www.ucumberlands.edu/directory/dr-aashis-luitel" target="_blank" rel="noopener noreferrer">Faculty profile<svg class="ext-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg><span class="sr-only">(opens in a new tab)</span></a></li>
+        </ul>
+      </div>
     </div>
-    <p class="fine">Views expressed here are my own and do not represent any employer or institution.</p>
+    <div class="foot-note">
+      <span>&copy; 2026 Aashis Luitel</span>
+      <span>Views expressed here are my own and do not represent any employer or institution.</span>
+    </div>
   </div>
 </footer>
-
-<script>
-(function(){
-  var bar=document.getElementById('bar'), hero=document.querySelector('.hero');
-  var mq=window.matchMedia('(prefers-reduced-motion: reduce)');
-  window.addEventListener('scroll',function(){
-    if(window.scrollY>hero.offsetHeight-80){bar.classList.add('on');}else{bar.classList.remove('on');}
-  },{passive:true});
-  if(!mq.matches && 'IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);} });
-    },{rootMargin:'0px 0px -12% 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-  }else{
-    document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('seen');});
-  }
-})();
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
