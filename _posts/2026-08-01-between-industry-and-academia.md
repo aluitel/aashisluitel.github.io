@@ -95,3 +95,4 @@ In the essays that follow, I will examine that intersection: where AI engineerin
 I intend to keep building and teaching because each reveals what the other cannot see clearly from within its own boundaries.
 
 Most of all, I intend to keep asking who benefits, who decides, and who remains accountable as AI changes the meaning of work, expertise, and institutional power.
+*This essay was first published in [Between Systems](https://ashluitel.substack.com/p/why-i-refuse-to-choose-between-industry-58d), my Substack publication.*
