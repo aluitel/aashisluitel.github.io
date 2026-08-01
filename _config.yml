@@ -1,0 +1,20 @@
+title: "Aashis Luitel"
+description: "Public-sector security and AI governance, built in practice and taught in the classroom."
+url: "https://aashisluitel.com"
+baseurl: ""
+timezone: "America/Denver"
+markdown: kramdown
+permalink: /blog/:title/
+future: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Aashis Luitel"
+
+exclude:
+  - README.md
+  - BLOGGING.md
