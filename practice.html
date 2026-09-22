@@ -43,83 +43,38 @@
 <main id="main">
 <section class="sec">
   <div class="wrap narrow">
-    <span class="eyebrow">Practice</span>
-    <h1>Three problems, taken in order.</h1>
-    <p class="lede">Not a chronology. These are the operating problems I have been responsible for, what changed, and what held up afterward. Everything here stays within publicly supportable ground: no customer names, no authorization decisions, no internal metrics.</p>
+    <h1>Practice</h1>
+    <p class="lede">Three operating problems I have been responsible for, what changed, and what held up afterward. Everything here stays within publicly supportable ground: no customer names, no authorization decisions, no internal metrics.</p>
   </div>
 </section>
 
-<section class="case" id="copilot">
-  <div class="wrap case-grid">
-    <div>
-      <span class="eyebrow eyebrow--blue">01</span>
-      <h2>Microsoft Security Copilot and its early agents</h2>
-    </div>
-    <div>
-      <dl>
-        <dt>The operating problem</dt>
-        <dd>Security Copilot was the first generative AI security product to reach market. There was no established answer for how a product of that kind should handle sensitive security data, explain its outputs, or satisfy the assurance expectations of regulated buyers. Existing security review processes assumed deterministic systems.</dd>
-        <dt>My responsibility</dt>
-        <dd>Product and program leadership spanning Responsible AI review, privacy engineering, compliance and federal and sovereign cloud readiness, working across engineering, legal and policy teams. Extended to the first agents built on the platform, where the questions get harder because the system takes actions rather than producing text.</dd>
-        <dt>What changed</dt>
-        <dd>Responsible AI principles became engineering practice rather than a published document: differential handling of sensitive data, model-evaluation gates in the release path, explainable outputs, and continuous assurance telemetry. Platform alignment work covered SOC 2, HIPAA, ISO 42001 and FedRAMP controls.</dd>
-        <dt>The durable lesson</dt>
-        <dd>Treating regulatory expectation as a design input rather than a gate at the end reorders the architecture, not just the paperwork. Compliance approached as a final checkpoint produces documentation. Approached as a constraint at design time, it produces a different system.</dd>
-      </dl>
-    </div>
+<section class="sec sec--tint" id="copilot">
+  <div class="wrap narrow">
+    <h2>Microsoft Security Copilot and its early agents</h2>
+    <p>Security Copilot was the first generative AI security product to reach market. There was no established answer for how a product of that kind should handle sensitive security data, explain its outputs, or satisfy the assurance expectations of regulated buyers. Existing security review processes assumed deterministic systems. My responsibility spanned Responsible AI review, privacy engineering, compliance and federal and sovereign cloud readiness, working across engineering, legal and policy teams, and it extended to the first agents built on the platform, where the questions get harder because the system takes actions rather than producing text.</p>
+    <p>What changed is that Responsible AI principles became engineering practice rather than a published document: differential handling of sensitive data, model-evaluation gates in the release path, explainable outputs, and continuous assurance telemetry. Platform alignment work covered SOC 2, HIPAA, ISO 42001 and FedRAMP controls. The lesson that held up afterward is that treating regulatory expectation as a design input, rather than a gate at the end, reorders the architecture and not just the paperwork. Compliance approached as a final checkpoint produces documentation; approached as a constraint at design time, it produces a different system.</p>
   </div>
 </section>
 
-<section class="case" id="responsible-ai">
-  <div class="wrap case-grid">
-    <div>
-      <span class="eyebrow eyebrow--blue">02</span>
-      <h2>Responsible AI, privacy and federal or sovereign cloud readiness</h2>
-    </div>
-    <div>
-      <dl>
-        <dt>The operating problem</dt>
-        <dd>Federal and sovereign cloud environments impose requirements that commercial AI products are not built to meet: data residency, restricted personnel access, auditability of automated decisions. Retrofitting these onto a shipped product is expensive and frequently impossible.</dd>
-        <dt>My responsibility</dt>
-        <dd>Translating principles such as fairness, reliability and safety, privacy and security, transparency and accountability into practices that survive contact with an assessor. That means specifying what evidence a control produces, who generates it, and how often, rather than asserting that the principle is upheld.</dd>
-        <dt>What changed</dt>
-        <dd>Accountability and transparency moved into day-to-day engineering workflow rather than living in a review committee. Compliance became a design discipline instead of a gatekeeping function, which is a change in where decisions get made, not only how they get recorded.</dd>
-        <dt>The durable lesson</dt>
-        <dd>Governance meetings rarely begin with ethics. They begin with legal asking where the data came from and engineering revealing what is already in production. Governance arrives after deployment because that is the moment ownership becomes visible. Moving it earlier is an organizational problem before it is a technical one.</dd>
-      </dl>
-    </div>
+<section class="sec" id="responsible-ai">
+  <div class="wrap narrow">
+    <h2>Responsible AI, privacy and federal or sovereign cloud readiness</h2>
+    <p>Federal and sovereign cloud environments impose requirements that commercial AI products are not built to meet: data residency, restricted personnel access, auditability of automated decisions. Retrofitting these onto a shipped product is expensive and frequently impossible. My responsibility was translating principles such as fairness, reliability and safety, privacy and security, transparency and accountability into practices that survive contact with an assessor: specifying what evidence a control produces, who generates it, and how often, rather than asserting that the principle is upheld.</p>
+    <p>What changed was that accountability and transparency moved into day-to-day engineering workflow rather than living in a review committee; compliance became a design discipline instead of a gatekeeping function, which is a change in where decisions get made, not only how they get recorded. The durable lesson: governance meetings rarely begin with ethics. They begin with legal asking where the data came from and engineering revealing what is already in production. Governance arrives after deployment because that is the moment ownership becomes visible, and moving it earlier is an organizational problem before it is a technical one.</p>
   </div>
 </section>
 
-<section class="case" id="nable">
-  <div class="wrap case-grid">
-    <div>
-      <span class="eyebrow eyebrow--blue">03</span>
-      <h2>Public-sector security, FedRAMP and CMMC execution</h2>
-    </div>
-    <div>
-      <dl>
-        <dt>The operating problem</dt>
-        <dd>FedRAMP Moderate and CMMC 2.0 Level 2 are not documentation exercises. They require a platform to continuously produce evidence that controls operate as described, across engineering teams whose primary incentive is shipping features.</dd>
-        <dt>My responsibility</dt>
-        <dd>Owning these programs end to end for public-sector and defense-adjacent platforms: control implementation, evidence collection, exception management and assessment readiness.</dd>
-        <dt>What changed</dt>
-        <dd>Evidence generation moved into the systems that already do the work, so that artifacts are a byproduct of operations rather than a quarterly scramble. Every exception gets an owner and a remediation date. Nothing sits open without a name attached.</dd>
-        <dt>The durable lesson</dt>
-        <dd>Most organizations do not fail an assessment because a control is missing. They fail because they cannot demonstrate the control operated on the dates in question. The gap between doing the work and being able to prove it is where programs actually break.</dd>
-      </dl>
-    </div>
+<section class="sec sec--tint" id="nable">
+  <div class="wrap narrow">
+    <h2>Public-sector security, FedRAMP and CMMC execution</h2>
+    <p>FedRAMP Moderate and CMMC 2.0 Level 2 are not documentation exercises. They require a platform to continuously produce evidence that controls operate as described, across engineering teams whose primary incentive is shipping features. I own these programs end to end for public-sector and defense-adjacent platforms: control implementation, evidence collection, exception management and assessment readiness.</p>
+    <p>What changed is that evidence generation moved into the systems that already do the work, so that artifacts are a byproduct of operations rather than a quarterly scramble: every exception gets an owner and a remediation date, and nothing sits open without a name attached. The durable lesson is that most organizations do not fail an assessment because a control is missing. They fail because they cannot demonstrate the control operated on the dates in question. The gap between doing the work and being able to prove it is where programs actually break.</p>
   </div>
 </section>
 
-<section class="closing">
-  <div class="wrap">
-    <h2>The same argument, in public</h2>
-    <p>Much of this work turns into commentary on AI regulation, procurement and security assurance.</p>
-    <div class="btn-row">
-      <a class="btn btn-primary" href="writing.html">Read the writing</a>
-      <a class="btn btn-ghost" href="teaching.html">Teaching and research</a>
-    </div>
+<section class="sec">
+  <div class="wrap narrow">
+    <p>Much of this work turns into commentary on AI regulation, procurement and security assurance (see <a href="writing.html">Writing &amp; Media</a>) and into what I teach (see <a href="teaching.html">Teaching &amp; Research</a>).</p>
   </div>
 </section>
 </main>
@@ -128,7 +83,7 @@
     <div class="foot-grid">
       <div>
         <h4>Aashis Luitel, D.Eng., MPA</h4>
-        <p style="color:var(--ink-2);max-width:26rem">Public-sector security and AI governance. Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Aurora, Colorado.</p>
+        <p style="color:var(--ink-2);max-width:26rem">Associate Professor of Artificial Intelligence at the University of the Cumberlands and Lead Technical Program Manager for Public Sector Security at N-able. Aurora, Colorado.</p>
       </div>
       <div>
         <h4>Site</h4>
