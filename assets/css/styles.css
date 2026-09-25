@@ -182,7 +182,7 @@ figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;
 
 /* ---------- generic section ---------- */
 .sec{padding:clamp(2.8rem,6vw,4.6rem) 0;}
-.sec-head{margin-bottom:2.2rem;max-width:46rem;}
+.sec-head{margin-bottom:2.2rem;max-width:46rem;border-top:3px solid var(--copper);padding-top:1.05rem;}
 .sec--tint{background:var(--paper-2);}
 
 /* ---------- writing cards ---------- */
@@ -210,6 +210,8 @@ figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;
 .s-card:hover h3{color:var(--blue);text-decoration:underline;text-underline-offset:.16em;}
 .s-card p{font-size:.95rem;line-height:1.56;color:var(--ink-2);}
 .s-card .when{margin-top:auto;padding-top:1.2rem;font-size:.78rem;color:var(--muted);letter-spacing:.03em;}
+.s-card .meta{margin-top:auto;padding-top:1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.7rem;flex-wrap:wrap;}
+.s-card .meta .when{margin-top:0;padding-top:0;}
 .s-card--lead{grid-column:span 2;}
 .s-card--lead h3{font-size:1.65rem;}
 @media (max-width:44rem){
