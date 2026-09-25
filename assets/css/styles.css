@@ -193,12 +193,12 @@ figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;
 .cred-item span{
   font-family:var(--sans);font-size:.8rem;font-weight:700;
   letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2);
-  line-height:1.28;max-width:9ch;
+  line-height:1.28;max-width:12ch;
 }
 @media (max-width:34rem){
   .cred-strip{column-gap:1.5rem;row-gap:1.3rem;}
   .cred-item img{width:2.15rem;height:2.15rem;}
-  .cred-item span{font-size:.72rem;max-width:7.5ch;}
+  .cred-item span{font-size:.72rem;max-width:10ch;}
 }
 
 /* ---------- generic section ---------- */
