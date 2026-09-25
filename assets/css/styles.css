@@ -194,6 +194,25 @@ figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;
 .card:hover h3{color:var(--blue);text-decoration:underline;text-underline-offset:.16em;}
 .card p{font-size:.9rem;color:var(--ink-2);}
 
+/* ---------- writing showcase (homepage) ---------- */
+.showcase{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.6rem;}
+.s-card{
+  display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  padding:1.7rem 1.8rem 1.5rem;background:var(--paper-2);
+  border-top:3px solid var(--copper);transition:background .12s ease;
+}
+.s-card:hover{background:var(--paper-3);}
+.s-card .src{font-size:.75rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.s-card h3{margin:.6rem 0 .65rem;font-size:1.32rem;line-height:1.28;}
+.s-card:hover h3{color:var(--blue);text-decoration:underline;text-underline-offset:.16em;}
+.s-card p{font-size:.95rem;line-height:1.56;color:var(--ink-2);}
+.s-card .when{margin-top:auto;padding-top:1.2rem;font-size:.78rem;color:var(--muted);letter-spacing:.03em;}
+.s-card--lead{grid-column:span 2;}
+.s-card--lead h3{font-size:1.65rem;}
+@media (max-width:44rem){
+  .s-card--lead{grid-column:span 1;}
+}
+
 /* ---------- list rows (writing archive, speaking) ---------- */
 .rows{border-top:1px solid var(--rule);}
 .row{
