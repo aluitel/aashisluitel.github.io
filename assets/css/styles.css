@@ -1,20 +1,21 @@
 /* ============================================================
    aashisluitel.com
-   Editorial system. Warm paper, deep ink, federal blue, copper.
+   Editorial system. Soft white, deep ink, federal blue, copper.
    ============================================================ */
 
 :root{
-  --paper:#FBF9F5;
-  --paper-2:#F3EFE7;
-  --paper-3:#EBE5DA;
+  --paper:#FDFDFC;
+  --paper-2:#F5F5F3;
+  --paper-3:#ECECE8;
   --ink:#191C21;
   --ink-2:#3B434C;
-  --muted:#6E6659;
-  --rule:#E0D9CC;
-  --rule-2:#CFC6B6;
+  --muted:#68686A;
+  --rule:#E4E4E0;
+  --rule-2:#D6D6D1;
   --blue:#173E77;
   --blue-lit:#2A5FA8;
   --copper:#A2582B;
+  --copper-lit:#DE9C5C;
   --white:#fff;
 
   --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
@@ -39,13 +40,13 @@ body{
 img{max-width:100%;height:auto;display:block;}
 
 /* ---------- type ---------- */
-h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.012em;line-height:1.14;}
-h1{font-size:clamp(2.1rem,4.6vw,3.5rem);}
-h2{font-size:clamp(1.6rem,3.2vw,2.4rem);}
-h3{font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.24;}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;margin:0;letter-spacing:-.014em;line-height:1.08;}
+h1{font-size:clamp(2.6rem,7vw,5.2rem);}
+h2{font-size:clamp(1.9rem,4.2vw,3.1rem);}
+h3{font-size:clamp(1.2rem,2.1vw,1.5rem);line-height:1.22;}
 p{margin:0 0 1.1rem;}
 p:last-child{margin-bottom:0;}
-.lede{font-family:var(--serif);font-size:clamp(1.13rem,2vw,1.36rem);line-height:1.52;color:var(--ink-2);}
+.lede{font-family:var(--serif);font-size:clamp(1.18rem,2.2vw,1.48rem);line-height:1.48;color:var(--ink-2);}
 
 .eyebrow{
   font-size:.73rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
@@ -83,7 +84,7 @@ a:hover .ext-ico{opacity:1;}
 
 /* ---------- header ---------- */
 .site-head{
-  position:sticky;top:0;z-index:100;background:rgba(251,249,245,.94);
+  position:sticky;top:0;z-index:100;background:rgba(253,253,252,.94);
   backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--rule);
 }
 .head-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;
@@ -168,22 +169,31 @@ a:hover .ext-ico{opacity:1;}
 figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;}
 
 /* ---------- page intro ---------- */
-.hero{padding:clamp(2.2rem,5vw,3.6rem) 0 clamp(2rem,4vw,2.8rem);}
-.hero h1{max-width:22ch;}
-.hero .lede{margin-top:1.1rem;max-width:46ch;}
-.intro{display:flex;gap:1.9rem;align-items:flex-start;}
-.intro .hero-fig{flex:none;width:9.5rem;border-radius:2px;}
-.intro .hero-fig.ph{aspect-ratio:1/1;}
-.intro .hero-fig.ph img{object-position:50% 8%;}
+.hero{padding:clamp(2.6rem,6vw,4.6rem) 0 clamp(2.2rem,5vw,3.4rem);}
+.hero h1{max-width:16ch;}
+.hero .lede{margin-top:1.3rem;max-width:44ch;}
+.intro{display:flex;gap:clamp(1.9rem,4vw,3.2rem);align-items:flex-start;}
+.intro .hero-fig{flex:none;width:clamp(10rem,18vw,15rem);border-radius:2px;}
+.intro .hero-fig.ph{aspect-ratio:4/5;}
+.intro .hero-fig.ph img{object-position:50% 15%;}
 @media (max-width:34rem){
   .intro{flex-direction:column;}
-  .intro .hero-fig{width:7rem;}
+  .intro .hero-fig{width:9rem;aspect-ratio:1/1;}
 }
 
 /* ---------- generic section ---------- */
 .sec{padding:clamp(2.8rem,6vw,4.6rem) 0;}
 .sec-head{margin-bottom:2.2rem;max-width:46rem;border-top:3px solid var(--copper);padding-top:1.05rem;}
 .sec--tint{background:var(--paper-2);}
+.sec--dark{background:var(--ink);color:var(--paper-2);}
+.sec--dark h1,.sec--dark h2,.sec--dark h3,.sec--dark h4{color:var(--paper);}
+.sec--dark .lede{color:var(--paper-2);}
+.sec--dark a{color:var(--copper-lit);}
+.sec--dark a:hover{color:var(--paper);}
+.sec--dark .sec-head{border-top-color:var(--copper-lit);}
+.sec--dark .btn-ghost{border-color:rgba(253,253,252,.3);color:var(--paper);}
+.sec--dark .btn-ghost:hover{border-color:var(--copper-lit);color:var(--copper-lit);}
+.sec--dark .eyebrow{color:var(--copper-lit);}
 
 /* ---------- writing cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:2rem 1.9rem;}
