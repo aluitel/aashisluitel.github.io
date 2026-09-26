@@ -233,14 +233,6 @@ figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;
 .sec-head--sm{margin-bottom:1rem;padding-top:.6rem;border-top-width:2px;}
 .sec-head--sm h3{margin:0;}
 
-/* ---------- career arc graphic ---------- */
-.arc-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 calc(var(--pad) * -1);padding:.2rem var(--pad) .4rem;}
-.arc-wrap{width:75rem;max-width:none;}
-.arc-wrap svg{width:100%;height:auto;display:block;overflow:visible;}
-.arc-line{fill:none;stroke:var(--copper);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
-.arc-node-ring{fill:var(--paper);stroke:var(--rule-2);stroke-width:1;}
-.arc-label{font-family:var(--sans);font-size:.78rem;font-weight:600;fill:var(--ink);}
-
 /* ---------- writing cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));gap:2rem 1.9rem;}
 .card{display:flex;flex-direction:column;text-decoration:none;color:inherit;}
