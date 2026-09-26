@@ -1,162 +1,209 @@
 /* aashisluitel.com - minimal vanilla JS
-   1. accessible mobile menu
-   2. graceful image placeholders (never a broken-image icon)
-   3. writing archive filters
+1. accessible mobile menu
+2. graceful image placeholders (never a broken-image icon)
+3. writing archive filters
 */
 (function () {
-  'use strict';
+'use strict';
 /* ---------- Google Analytics ---------- */
-  var googleTag = document.createElement('script');
-  googleTag.async = true;
-  googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-YP287B6VY3';
-  document.head.appendChild(googleTag);
+var googleTag = document.createElement('script');
+googleTag.async = true;
+googleTag.src = 'https://www.googletagmanager.com/gtag/js?id=G-YP287B6VY3';
+document.head.appendChild(googleTag);
 
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () {
-    window.dataLayer.push(arguments);
-  };
+window.dataLayer = window.dataLayer || [];
+window.gtag = function () {
+window.dataLayer.push(arguments);
+};
 
-  window.gtag('js', new Date());
-  window.gtag('config', 'G-YP287B6VY3');
+window.gtag('js', new Date());
+window.gtag('config', 'G-YP287B6VY3');
 
-  /* ---------- 1. mobile menu ---------- */
-  var btn = document.querySelector('.menu-btn');
-  var nav = document.getElementById('primary-nav');
-  /* ---------- add blog to shared navigation ---------- */
-  if (nav) {
-    var writingLink = nav.querySelector('a[href$="writing.html"]');
-    var blogLink = nav.querySelector('a[href="/blog/"]');
+/* ---------- 1. mobile menu ---------- */
+var btn = document.querySelector('.menu-btn');
+var nav = document.getElementById('primary-nav');
+/* ---------- add blog to shared navigation ---------- */
+if (nav) {
+var writingLink = nav.querySelector('a[href$="writing.html"]');
+var blogLink = nav.querySelector('a[href="/blog/"]');
 
-    if (!blogLink && writingLink) {
-      blogLink = document.createElement('a');
-      blogLink.href = '/blog/';
-      blogLink.textContent = 'Blog';
-      writingLink.insertAdjacentElement('afterend', blogLink);
-    }
+if (!blogLink && writingLink) {
+blogLink = document.createElement('a');
+blogLink.href = '/blog/';
+blogLink.textContent = 'Blog';
+writingLink.insertAdjacentElement('afterend', blogLink);
+}
 
-    if (blogLink && window.location.pathname.indexOf('/blog/') === 0) {
-      if (writingLink) writingLink.removeAttribute('aria-current');
-      blogLink.setAttribute('aria-current', 'page');
-    }
-  }
-     /* ---------- add blog to shared footer ---------- */
-  var footer = document.querySelector('.site-foot');
+if (blogLink && window.location.pathname.indexOf('/blog/') === 0) {
+if (writingLink) writingLink.removeAttribute('aria-current');
+blogLink.setAttribute('aria-current', 'page');
+}
+}
+/* ---------- add press kit to shared navigation ---------- */
+if (nav) {
+var pressLink = nav.querySelector('a[href$="press-kit.html"]');
+var contactBtn = nav.querySelector('a.btn-sm');
 
-  if (footer && !footer.querySelector('a[href="/blog/"]')) {
-    var footerWritingLink = footer.querySelector('a[href$="writing.html"]');
+if (!pressLink && contactBtn) {
+pressLink = document.createElement('a');
+pressLink.href = '/press-kit.html';
+pressLink.textContent = 'Press kit';
+contactBtn.insertAdjacentElement('beforebegin', pressLink);
+}
 
-    if (footerWritingLink) {
-      var footerWritingItem = footerWritingLink.closest('li');
+if (pressLink && window.location.pathname.indexOf('/press-kit.html') === 0) {
+pressLink.setAttribute('aria-current', 'page');
+}
+}
+/* ---------- add blog to shared footer ---------- */
+var footer = document.querySelector('.site-foot');
 
-      if (footerWritingItem) {
-        var footerBlogItem = document.createElement('li');
-        var footerBlogLink = document.createElement('a');
+if (footer && !footer.querySelector('a[href="/blog/"]')) {
+var footerWritingLink = footer.querySelector('a[href$="writing.html"]');
 
-        footerBlogLink.href = '/blog/';
-        footerBlogLink.textContent = 'Blog';
-        footerBlogItem.appendChild(footerBlogLink);
-        footerWritingItem.insertAdjacentElement('afterend', footerBlogItem);
-      }
-    }
-  }
-  if (btn && nav) {
-    var setOpen = function (open) {
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-      nav.classList.toggle('open', open);
-      btn.querySelector('.menu-label').textContent = open ? 'Close' : 'Menu';
-    };
+if (footerWritingLink) {
+var footerWritingItem = footerWritingLink.closest('li');
 
-    btn.addEventListener('click', function () {
-      setOpen(btn.getAttribute('aria-expanded') !== 'true');
-    });
+if (footerWritingItem) {
+var footerBlogItem = document.createElement('li');
+var footerBlogLink = document.createElement('a');
 
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
-        setOpen(false);
-        btn.focus();
-      }
-    });
+footerBlogLink.href = '/blog/';
+footerBlogLink.textContent = 'Blog';
+footerBlogItem.appendChild(footerBlogLink);
+footerWritingItem.insertAdjacentElement('afterend', footerBlogItem);
+}
+}
+}
+if (btn && nav) {
+var setOpen = function (open) {
+btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+nav.classList.toggle('open', open);
+btn.querySelector('.menu-label').textContent = open ? 'Close' : 'Menu';
+};
 
-    document.addEventListener('click', function (e) {
-      if (btn.getAttribute('aria-expanded') !== 'true') return;
-      if (!nav.contains(e.target) && !btn.contains(e.target)) setOpen(false);
-    });
+btn.addEventListener('click', function () {
+setOpen(btn.getAttribute('aria-expanded') !== 'true');
+});
 
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 960) setOpen(false);
-    });
-  }
+document.addEventListener('keydown', function (e) {
+if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
+setOpen(false);
+btn.focus();
+}
+});
 
-  /* ---------- 2. image placeholders ---------- */
-  var markEmpty = function (img) {
-    var fig = img.closest('.ph');
-    if (!fig || fig.classList.contains('is-empty')) return;
+document.addEventListener('click', function (e) {
+if (btn.getAttribute('aria-expanded') !== 'true') return;
+if (!nav.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+});
 
-    var mode = img.getAttribute('data-fallback') || 'blank';
+window.addEventListener('resize', function () {
+if (window.innerWidth > 960) setOpen(false);
+});
+}
 
-    /* Optional thumbnails: drop the image area entirely and let the card
-       reflow as a text-only editorial card. */
-    if (mode === 'remove') {
-      var card = fig.closest('.card');
-      if (card) card.classList.add('card--text');
-      fig.parentNode.removeChild(fig);
-      return;
-    }
+/* ---------- 2. image placeholders ---------- */
+var markEmpty = function (img) {
+var fig = img.closest('.ph');
+if (!fig || fig.classList.contains('is-empty')) return;
 
-    fig.classList.add('is-empty');
+var mode = img.getAttribute('data-fallback') || 'blank';
 
-    if (mode === 'monogram') {
-      var mono = document.createElement('span');
-      mono.className = 'ph__mono';
-      mono.setAttribute('aria-hidden', 'true');
-      mono.textContent = 'AL';
-      fig.appendChild(mono);
+/* Optional thumbnails: drop the image area entirely and let the card
+reflow as a text-only editorial card. */
+if (mode === 'remove') {
+var card = fig.closest('.card');
+if (card) card.classList.add('card--text');
+fig.parentNode.removeChild(fig);
+return;
+}
 
-      var sr = document.createElement('span');
-      sr.className = 'sr-only';
-      sr.textContent = 'Monogram placeholder for a portrait of Aashis Luitel';
-      fig.appendChild(sr);
-      return;
-    }
+fig.classList.add('is-empty');
 
-    /* Content-aware neutral label: Speaking / Teaching / Service */
-    var cap = document.createElement('span');
-    cap.className = 'ph__cap';
-    cap.textContent = mode;
-    fig.appendChild(cap);
-  };
+if (mode === 'monogram') {
+var mono = document.createElement('span');
+mono.className = 'ph__mono';
+mono.setAttribute('aria-hidden', 'true');
+mono.textContent = 'AL';
+fig.appendChild(mono);
 
-  Array.prototype.forEach.call(document.querySelectorAll('.ph img'), function (img) {
-    img.addEventListener('error', function () { markEmpty(img); });
-    if (img.complete && img.naturalWidth === 0) markEmpty(img);
-  });
+var sr = document.createElement('span');
+sr.className = 'sr-only';
+sr.textContent = 'Monogram placeholder for a portrait of Aashis Luitel';
+fig.appendChild(sr);
+return;
+}
 
-  /* ---------- 3. writing filters ---------- */
-  var filterBar = document.querySelector('.filters');
-  if (filterBar) {
-    var items = document.querySelectorAll('[data-cat]');
-    var count = document.getElementById('filter-count');
+/* Content-aware neutral label: Speaking / Teaching / Service */
+var cap = document.createElement('span');
+cap.className = 'ph__cap';
+cap.textContent = mode;
+fig.appendChild(cap);
+};
 
-    filterBar.addEventListener('click', function (e) {
-      var b = e.target.closest('button');
-      if (!b) return;
+Array.prototype.forEach.call(document.querySelectorAll('.ph img'), function (img) {
+img.addEventListener('error', function () { markEmpty(img); });
+if (img.complete && img.naturalWidth === 0) markEmpty(img);
+});
 
-      Array.prototype.forEach.call(filterBar.querySelectorAll('button'), function (x) {
-        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
-      });
+/* ---------- 3. writing filters ---------- */
+var filterBar = document.querySelector('.filters');
+if (filterBar) {
+var items = document.querySelectorAll('[data-cat]');
+var count = document.getElementById('filter-count');
 
-      var want = b.getAttribute('data-filter');
-      var shown = 0;
+filterBar.addEventListener('click', function (e) {
+var b = e.target.closest('button');
+if (!b) return;
 
-      Array.prototype.forEach.call(items, function (item) {
-        var match = want === 'all' || item.getAttribute('data-cat') === want;
-        item.hidden = !match;
-        if (match) shown++;
-      });
+Array.prototype.forEach.call(filterBar.querySelectorAll('button'), function (x) {
+x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+});
 
-      if (count) {
-        count.textContent = shown + (shown === 1 ? ' item' : ' items');
-      }
-    });
-  }
+var want = b.getAttribute('data-filter');
+var shown = 0;
+
+Array.prototype.forEach.call(items, function (item) {
+var match = want === 'all' || item.getAttribute('data-cat') === want;
+item.hidden = !match;
+if (match) shown++;
+});
+
+if (count) {
+count.textContent = shown + (shown === 1 ? ' item' : ' items');
+}
+});
+}
+
+/* ---------- 4. condense header on scroll ---------- */
+var head = document.querySelector('.site-head');
+if (head) {
+var onScroll = function () {
+head.classList.toggle('is-scrolled', window.scrollY > 24);
+};
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+/* ---------- 5. scroll reveal ---------- */
+var revealEls = document.querySelectorAll('.reveal');
+var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (revealEls.length && !reduceMotion && 'IntersectionObserver' in window) {
+Array.prototype.forEach.call(revealEls, function (el) {
+el.classList.add('reveal-armed');
+});
+
+var io = new IntersectionObserver(function (entries, obs) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add('is-visible');
+obs.unobserve(entry.target);
+}
+});
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+Array.prototype.forEach.call(revealEls, function (el) { io.observe(el); });
+}
 })();
