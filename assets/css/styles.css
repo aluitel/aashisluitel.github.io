@@ -168,6 +168,10 @@ a:hover .ext-ico{opacity:1;}
 .card--text .src{display:block;margin-bottom:.1rem;}
 figcaption{font-size:.79rem;color:var(--muted);margin-top:.6rem;line-height:1.5;}
 
+/* ---------- full-bleed photo band ---------- */
+.photo-band{margin:0 0 clamp(2.8rem,6vw,4.6rem);}
+.photo-band figcaption{padding:.7rem var(--pad) 0;max-width:var(--max);margin:0 auto;}
+
 /* ---------- page intro ---------- */
 .hero{padding:clamp(2.6rem,6vw,4.6rem) 0 clamp(2.2rem,5vw,3.4rem);}
 .hero h1{max-width:16ch;}
