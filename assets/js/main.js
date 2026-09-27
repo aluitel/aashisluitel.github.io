@@ -19,6 +19,22 @@ window.dataLayer.push(arguments);
 window.gtag('js', new Date());
 window.gtag('config', 'G-YP287B6VY3');
 
+/* ---------- 0. dark mode toggle ----------
+   The initial theme is already applied by a tiny inline script in <head>
+   (before first paint, to avoid a flash of the wrong theme). This just
+   wires up the button and keeps localStorage in sync. */
+var themeBtn = document.getElementById('theme-toggle');
+if (themeBtn) {
+themeBtn.addEventListener('click', function () {
+var root = document.documentElement;
+var isDark = root.getAttribute('data-theme') === 'dark'
+|| (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+var next = isDark ? 'light' : 'dark';
+root.setAttribute('data-theme', next);
+try { localStorage.setItem('theme', next); } catch (e) {}
+});
+}
+
 /* ---------- 1. mobile menu ---------- */
 var btn = document.querySelector('.menu-btn');
 var nav = document.getElementById('primary-nav');
