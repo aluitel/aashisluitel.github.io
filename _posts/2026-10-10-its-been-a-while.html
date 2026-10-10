@@ -1,0 +1,798 @@
+---
+title: "It’s Been a While. Let Me Tell You Where I’ve Been."
+date: 2026-10-10
+description: "One long night in the hospital, a look back from Balakhu to here, and why I’ve come to prefer a quieter life."
+category: "Personal"
+permalink: /blog/its-been-a-while/
+---
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
+/* "It's Been a While" post styles. Everything is scoped to .ibw and reads the
+   site's own tokens (--accent, --text, --bg-3 ...), so light and dark mode follow
+   the site's theme switch automatically. Fallbacks are the site's light values. */
+.ibw{
+  --ibw-a:var(--accent,#5B4FE0);
+  --ibw-b:var(--accent-2,#0EA5C4);
+  --ibw-grad:linear-gradient(135deg,var(--ibw-a),var(--ibw-b));
+  --ibw-hl:var(--accent-a18,rgba(91,79,224,.18));
+  --ibw-soft:var(--accent-a10,rgba(91,79,224,.1));
+  --ibw-t1:var(--text,#0B0D12);
+  --ibw-t2:var(--text-2,#4B4F5C);
+  --ibw-t3:var(--text-3,#82858F);
+  --ibw-bg2:var(--bg-2,#FFFFFF);
+  --ibw-bg3:var(--bg-3,#F1F2F5);
+  --ibw-line:var(--border,rgba(10,12,20,.09));
+  --ibw-line2:var(--border-2,rgba(10,12,20,.16));
+  --ibw-disp:var(--display,"Space Grotesk",Inter,system-ui,sans-serif);
+  --ibw-mono:var(--mono,"JetBrains Mono",ui-monospace,Menlo,monospace);
+  position:relative;
+}
+.ibw *,.ibw *::before,.ibw *::after{box-sizing:border-box}
+
+/* reading progress */
+.ibw-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;pointer-events:none}
+.ibw-progress span{display:block;height:100%;background:var(--ibw-grad);transform-origin:0 50%;transform:scaleX(0)}
+
+/* opening */
+.ibw .ibw-lead{font-family:var(--ibw-disp);font-weight:600;font-size:clamp(1.95rem,4.6vw,2.8rem);line-height:1.08;letter-spacing:-.025em;color:var(--ibw-t1);margin:0 0 1.8rem}
+.ibw-lead span{display:inline-block;color:var(--ibw-a)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .ibw-lead span{background:var(--ibw-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+}
+.ibw .ibw-drop::first-letter{float:left;font-family:var(--ibw-disp);font-weight:600;font-size:3.7em;line-height:.8;margin:.07em .1em 0 0;color:var(--ibw-a)}
+
+/* highlighter */
+.ibw mark{color:inherit;background:linear-gradient(to bottom,transparent 56%,var(--ibw-hl) 56%,var(--ibw-hl) 94%,transparent 94%);padding:0 .1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+/* section markers */
+.ibw .ibw-sec{margin:4.4rem 0 1.5rem;padding-top:1.7rem;border-top:1px solid var(--ibw-line);position:relative}
+.ibw .ibw-sec::before{content:"";position:absolute;top:-1px;left:0;width:3.2rem;height:2px;background:var(--ibw-grad)}
+.ibw .ibw-num{display:block;font-family:var(--ibw-mono);font-size:.72rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ibw-a);margin:0 0 .65rem}
+.ibw .ibw-sec h2{margin:0;font-family:var(--ibw-disp);font-weight:600;font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.12;letter-spacing:-.02em;color:var(--ibw-t1)}
+
+/* short, standalone lines */
+.ibw .ibw-beat{font-family:var(--ibw-disp);font-weight:600;font-size:clamp(1.25rem,2.5vw,1.55rem);line-height:1.3;letter-spacing:-.012em;color:var(--ibw-t1);margin:2.1rem 0}
+.ibw .ibw-beat--xl{font-size:clamp(1.8rem,4.4vw,2.6rem);letter-spacing:-.025em;line-height:1.1;margin:2.6rem 0}
+.ibw .ibw-aside{font-style:italic;color:var(--ibw-t2);padding-left:1rem;border-left:2px solid var(--ibw-line2)}
+
+/* pull quotes */
+.ibw .ibw-pull{margin:3rem 0;padding:0}
+.ibw .ibw-pull blockquote{margin:0;padding:.15rem 0 .15rem 1.5rem;border:0;border-left:3px solid var(--ibw-a);border-image:var(--ibw-grad) 1;font-style:normal;color:var(--ibw-t1)}
+.ibw .ibw-pull blockquote p{margin:0;font-family:var(--ibw-disp);font-weight:500;font-size:clamp(1.42rem,3vw,1.9rem);line-height:1.3;letter-spacing:-.016em}
+.ibw .ibw-pull--center{text-align:center;margin:3.6rem 0}
+.ibw .ibw-pull--center blockquote{border:0;padding:2.3rem .5rem 1.6rem;position:relative}
+.ibw .ibw-pull--center blockquote::before{content:"\201C";position:absolute;top:-.6rem;left:50%;transform:translateX(-50%);font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:4.6rem;line-height:1;color:var(--ibw-a);opacity:.85}
+.ibw .ibw-pull--center blockquote::after{content:"";display:block;width:3.5rem;height:2px;margin:1.5rem auto 0;background:var(--ibw-grad)}
+.ibw .ibw-pull--hero blockquote p{font-weight:600;font-size:clamp(1.9rem,4.8vw,2.85rem);line-height:1.12;letter-spacing:-.028em}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .ibw .ibw-pull--hero blockquote p{background:var(--ibw-grad);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+}
+
+/* Balakhu at a glance */
+.ibw .ibw-facts{list-style:none;margin:2rem 0 2.2rem;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--ibw-line);border-radius:14px;overflow:hidden;background:var(--ibw-bg2)}
+.ibw .ibw-facts li{margin:0;padding:1.05rem 1.1rem 1.1rem;border-right:1px solid var(--ibw-line);border-bottom:1px solid var(--ibw-line);display:flex;flex-direction:column;gap:.3rem}
+.ibw .ibw-facts li:nth-child(2n){border-right:0}
+.ibw .ibw-facts li:nth-last-child(-n+2){border-bottom:0}
+.ibw .ibw-facts b{font-family:var(--ibw-disp);font-weight:600;font-size:1.22rem;line-height:1.15;letter-spacing:-.01em;color:var(--ibw-t1)}
+.ibw .ibw-facts span{font-size:.84rem;line-height:1.4;color:var(--ibw-t3)}
+@media (min-width:44rem){
+  .ibw .ibw-facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .ibw .ibw-facts li{border-bottom:0}
+  .ibw .ibw-facts li:nth-child(2n){border-right:1px solid var(--ibw-line)}
+  .ibw .ibw-facts li:last-child{border-right:0}
+}
+
+/* photos */
+.ibw .ibw-photo{margin:2.6rem 0 2.8rem;padding:0}
+.ibw .ibw-photo img{display:block;width:100%;height:auto;margin:0;border-radius:16px;border:1px solid var(--ibw-line);box-shadow:var(--shadow,0 10px 30px -14px rgba(16,18,27,.22));background:var(--ibw-bg3)}
+.ibw .ibw-photo--tall{max-width:27rem;margin-left:auto;margin-right:auto}
+.ibw .ibw-photo figcaption{margin-top:.8rem;font-size:.9rem;line-height:1.5;color:var(--ibw-t2)}
+.ibw .ibw-photo figcaption .ibw-when{display:block;margin-bottom:.1rem}
+
+/* small labels */
+.ibw .ibw-label{display:block;font-family:var(--ibw-mono);font-size:.7rem;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ibw-a);margin:0 0 .5rem}
+
+/* perspective note */
+.ibw .ibw-note{margin:2.4rem 0;padding:1.25rem 1.4rem 1.3rem;border-radius:14px;background:var(--ibw-soft);border:1px solid var(--ibw-hl)}
+.ibw .ibw-note p{margin:0;font-family:var(--ibw-disp);font-weight:500;font-size:clamp(1.15rem,2.2vw,1.35rem);line-height:1.38;color:var(--ibw-t1)}
+
+/* dialogue */
+.ibw .ibw-dialog{margin:1.6rem 0 2rem;padding:0}
+.ibw .ibw-bubble{display:inline-flex;flex-direction:column;gap:.45rem;max-width:min(100%,34rem);margin:0;padding:1rem 1.25rem 1.05rem;border-radius:20px 20px 20px 6px;background:var(--ibw-bg3);border:1px solid var(--ibw-line)}
+.ibw .ibw-say{font-family:var(--ibw-disp);font-weight:600;font-size:clamp(1.18rem,2.4vw,1.45rem);line-height:1.3;letter-spacing:-.01em;color:var(--ibw-t1)}
+.ibw .ibw-tr{font-size:.95rem;line-height:1.45;font-style:italic;color:var(--ibw-t2)}
+.ibw .ibw-dialog--me{text-align:right}
+.ibw .ibw-dialog--me .ibw-bubble{border-radius:20px 20px 6px 20px;background:var(--ibw-grad);border:0;text-align:left}
+.ibw .ibw-dialog--me .ibw-say{color:#fff}
+.ibw .ibw-heard{display:flex;flex-direction:column;align-items:flex-start;gap:.7rem;margin:1.4rem 0 2.1rem}
+.ibw .ibw-heard .ibw-say{font-size:clamp(1.05rem,2vw,1.2rem);font-weight:500}
+.ibw .ibw-or{font-size:.9rem;font-style:italic;color:var(--ibw-t3)}
+.ibw .ibw-heard .ibw-bubble{display:block}
+.ibw .ibw-heard .ibw-bubble:nth-child(2){margin-left:clamp(0rem,6vw,3rem)}
+
+/* the road so far */
+.ibw .ibw-road{margin:2.8rem 0 1rem;padding:1.5rem 1.4rem 1.2rem;border-radius:16px;background:var(--ibw-bg2);border:1px solid var(--ibw-line);box-shadow:var(--shadow,0 10px 30px -14px rgba(16,18,27,.22))}
+.ibw .ibw-road .ibw-label{margin-bottom:1.1rem}
+.ibw .ibw-road ol{list-style:none;margin:0;padding:0;position:relative}
+.ibw .ibw-road ol::before{content:"";position:absolute;left:.34rem;top:.55rem;bottom:.75rem;width:2px;background:var(--ibw-grad);opacity:.55;border-radius:2px}
+.ibw .ibw-road li{position:relative;margin:0;padding:0 0 .95rem 1.7rem;display:grid;gap:.1rem}
+.ibw .ibw-road li:last-child{padding-bottom:0}
+.ibw .ibw-road li::before{content:"";position:absolute;left:0;top:.42rem;width:.72rem;height:.72rem;border-radius:50%;background:var(--ibw-bg2);border:2px solid var(--ibw-a)}
+.ibw .ibw-road li:last-child::before{background:var(--ibw-grad);border-color:transparent}
+.ibw .ibw-when{font-family:var(--ibw-mono);font-size:.74rem;font-weight:500;letter-spacing:.03em;color:var(--ibw-a);line-height:1.6}
+.ibw .ibw-what{font-size:1rem;line-height:1.45;color:var(--ibw-t1)}
+@media (min-width:40rem){
+  .ibw .ibw-road{padding:1.7rem 1.8rem 1.4rem}
+  .ibw .ibw-road li{grid-template-columns:8.5rem 1fr;gap:1rem;align-items:baseline}
+}
+
+/* then and now */
+.ibw .ibw-then-now{display:grid;grid-template-columns:1fr;gap:.8rem;margin:2rem 0 2.2rem}
+.ibw .ibw-then-now > div{padding:1.1rem 1.25rem 1.2rem;border-radius:14px;border:1px solid var(--ibw-line);background:var(--ibw-bg2)}
+.ibw .ibw-then-now > div:last-child{background:var(--ibw-soft);border-color:var(--ibw-hl)}
+.ibw .ibw-then-now p{margin:0;font-family:var(--ibw-disp);font-weight:500;font-size:1.15rem;line-height:1.35;color:var(--ibw-t1)}
+.ibw .ibw-then-now > div:first-child .ibw-label{color:var(--ibw-t3)}
+@media (min-width:40rem){.ibw .ibw-then-now{grid-template-columns:1fr 1fr}}
+
+/* topic tags */
+.ibw .ibw-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.1rem}
+.ibw .ibw-tags span{font-family:var(--ibw-mono);font-size:.76rem;font-weight:500;letter-spacing:.02em;padding:.36rem .75rem;border-radius:99px;background:var(--ibw-bg3);color:var(--ibw-t2);border:1px solid var(--ibw-line)}
+
+/* the loop */
+.ibw .ibw-loop{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .3rem;margin:1.6rem 0 2rem;padding:1.1rem 1.15rem;border-radius:14px;border:1px dashed var(--ibw-line2)}
+.ibw .ibw-loop span{font-size:.9rem;line-height:1.2;padding:.4rem .7rem;border-radius:99px;background:var(--ibw-bg3);color:var(--ibw-t1);font-weight:500}
+.ibw .ibw-loop span:not(:last-child)::after{content:"\2192";margin-left:.55rem;color:var(--ibw-a);font-weight:600}
+.ibw .ibw-loop span:not(:last-child){padding-right:.5rem}
+.ibw .ibw-loop .ibw-loop-back{background:var(--ibw-grad);color:#fff}
+
+/* busy / tired / nothing planned */
+.ibw .ibw-triad{margin:2rem 0 2.3rem;padding-left:1.4rem;border-left:3px solid var(--ibw-a);border-image:var(--ibw-grad) 1}
+.ibw .ibw-triad p{margin:0 0 .55rem;font-family:var(--ibw-disp);font-weight:500;font-size:clamp(1.2rem,2.4vw,1.45rem);line-height:1.3;letter-spacing:-.01em;color:var(--ibw-t2)}
+.ibw .ibw-triad p:last-child{margin:0;color:var(--ibw-t1);font-weight:600}
+
+/* lost touch */
+.ibw .ibw-callout{margin:0 0 2rem;padding:1.6rem 1.6rem 1.5rem;border-radius:18px;background:var(--ibw-bg2);border:1px solid transparent;background-image:linear-gradient(var(--ibw-bg2),var(--ibw-bg2)),var(--ibw-grad);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:var(--glow,0 0 0 1px rgba(91,79,224,.18),0 12px 28px -12px rgba(91,79,224,.35))}
+.ibw .ibw-callout p{margin:0;font-family:var(--ibw-disp);font-weight:500;font-size:clamp(1.25rem,2.6vw,1.6rem);line-height:1.3;letter-spacing:-.014em;color:var(--ibw-t1)}
+.ibw .ibw-callout .ibw-callout-short{margin-top:.8rem;font-weight:700;color:var(--ibw-a)}
+
+/* I like ... */
+.ibw .ibw-likes{list-style:none;margin:1.4rem 0 1.6rem;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.ibw .ibw-likes li{margin:0;font-size:.98rem;line-height:1.3;padding:.5rem .9rem;border-radius:99px;background:var(--ibw-soft);color:var(--ibw-t1);border:1px solid var(--ibw-hl)}
+
+/* closing */
+.ibw .ibw-close{margin:3.4rem 0 1rem;padding:2.6rem 1.5rem 2.2rem;text-align:center;border-radius:22px;position:relative;overflow:hidden;background:var(--ibw-bg2);border:1px solid var(--ibw-line)}
+.ibw .ibw-close::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--ibw-grad)}
+.ibw .ibw-close p{margin:0}
+.ibw .ibw-close-1{font-family:var(--ibw-disp);font-weight:600;font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.08;letter-spacing:-.03em;color:var(--ibw-t1)}
+.ibw .ibw-close-2{margin-top:.7rem!important;font-family:var(--ibw-disp);font-weight:500;font-size:clamp(1.15rem,2.4vw,1.4rem);color:var(--ibw-t2)}
+.ibw .ibw-close-3{margin-top:1.7rem!important;font-family:var(--ibw-disp);font-weight:500;font-size:1.15rem;color:var(--ibw-t1)}
+.ibw .ibw-sign{margin-top:.1rem!important;font-family:Caveat,"Segoe Script","Bradley Hand","Brush Script MT",cursive;font-weight:600;font-size:2.9rem;line-height:1.1;color:var(--ibw-a)}
+
+/* gentle reveal, only when JS is running and motion is welcome */
+@media (prefers-reduced-motion:no-preference){
+  .ibw.ibw-js .ibw-reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .ibw.ibw-js .ibw-reveal.is-in{opacity:1;transform:none}
+}
+
+@media print{
+  .ibw-progress{display:none}
+  .ibw.ibw-js .ibw-reveal{opacity:1!important;transform:none!important}
+}
+</style>
+
+<div class="ibw">
+<div class="ibw-progress" aria-hidden="true"><span></span></div>
+<p class="ibw-lead">Hey, folks. <span>It’s been a while.</span></p>
+
+<p class="ibw-drop">Some of us haven’t really talked in years. We’re connected on Facebook, we see each other’s pictures, occasionally exchange a birthday wish or a quick message, and that’s about it. Some of you have reached out and never heard back. Others probably wondered what happened to me.</p>
+
+<p class="ibw-beat">Well, a lot has happened.</p>
+
+<p>Let me start with this week.</p>
+
+<header class="ibw-sec" id="this-week"><span class="ibw-num">01 / This week</span><h2>One long night</h2></header>
+
+<p>On October 5, I had surgery for a herniated disc in my lower back. Thankfully, it went well. I spent just one night in the hospital, and I’m now recovering at home.</p>
+
+<p>That one night felt unusually long. I’m so accustomed to having something going on, whether it’s work, reading, teaching, or listening to the news, that lying in a hospital bed with nowhere to be was a strange experience. For once, I couldn’t rearrange my calendar and get on with things.</p>
+
+<p>And I found myself thinking about my life.</p>
+
+<p>I’ve crossed 35 and am making my way toward 40 now. People talk about midlife crises as though something suddenly happens around this age. I don’t know about that. I’ve had enough changes in my life already.</p>
+
+<p>But the last seven years have been particularly interesting. They’ve brought some of the worst pain I’ve ever experienced, physically and otherwise. Yet these same years have also been <mark>among the most rewarding of my professional life.</mark></p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>How did I manage to carry both at the same time? I don’t entirely know.</p></blockquote></figure>
+
+<p>And perhaps this is also a good opportunity to explain why I’ve become less available, why I spend so much time working, and why, even though I now have more choices than I ever imagined, <mark>I often prefer to live quietly.</mark></p>
+
+<header class="ibw-sec" id="writing"><span class="ibw-num">02 / Before any of this</span><h2>I’ve always loved writing.</h2></header>
+
+<p>Some of you might remember that I used to write quite a bit as a teenager in Nepal. I wrote about my feelings, things happening around me, and, interestingly, technology.</p>
+
+<p>Technology fascinated me even when I knew very little about it. Whenever I learned something new, I wanted to share it. I used to imagine <mark>another boy somewhere in a remote village, just like me, trying to understand something he’d never seen before.</mark></p>
+
+<p>Much later, I discovered that quite a few people actually knew my name from those technology columns. Somehow I’d become a familiar name to some readers without even realizing it.</p>
+
+<p class="ibw-aside">I still find that funny.</p>
+
+<p>When I look back at those early writings, I sometimes laugh at myself. I was naive, and some of my arguments were rather hollow. I didn’t have much mentorship, and I often didn’t know enough to realize where I was wrong.</p>
+
+<p>But I enjoyed writing. It allowed me to communicate what I was learning and what I thought about the world.</p>
+
+<p>These days, I still write, mostly about AI, cybersecurity, technology, and public policy. But I rarely sit down to write something this personal.</p>
+
+<p class="ibw-beat">So, here we go.</p>
+
+<header class="ibw-sec" id="balakhu"><span class="ibw-num">03 / Okhaldhunga, eastern Nepal</span><h2>Balakhu</h2></header>
+
+<p>I was born in Balakhu, a remote village in Okhaldhunga, in the hills of eastern Nepal.</p>
+
+<p>When I say remote, I really mean remote.</p>
+
+<ul class="ibw-facts ibw-reveal" aria-label="Balakhu at a glance">
+  <li><b>No road</b><span>to the village</span></li>
+  <li><b>No electricity</b><span>in the village</span></li>
+  <li><b>Grade 4</b><span>first English lessons</span></li>
+  <li><b>Grade 6</b><span>first telephone, seen but not used</span></li>
+</ul>
+
+<p>There was no road to our village, no electricity, and many ordinary things that children elsewhere took for granted were completely unfamiliar to us.</p>
+
+<p>I started learning English in fourth grade. I first saw a telephone in sixth grade.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>I didn’t use it. I just saw one.</p></blockquote></figure>
+
+<p>Our school was made of mud and stone, with corrugated metal sheets, <i lang="ne-Latn">jasta pata</i>, for the roof. During winter, when the sun came out, we’d sometimes study outside because it was warmer than sitting inside the classroom. When the weather didn’t allow that, we’d go back into the little room.</p>
+
+<p class="ibw-beat">That was our school.</p>
+
+<figure class="ibw-photo ibw-reveal">
+  <img src="/assets/images/blog-balakhu-dashain-2009.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="Aashis Luitel smiling in Balakhu during Dashain, with red tika on his forehead and jamara tucked behind his ear, in front of a stone wall.">
+  <figcaption><span class="ibw-when">Balakhu, Dashain 2009</span>I think that was the last Dashain I celebrated in Balakhu.</figcaption>
+</figure>
+
+<header class="ibw-sec" id="first-bus"><span class="ibw-num">04 / Around age twelve</span><h2>The first bus</h2></header>
+
+<p>I was around twelve when I first saw a bus.</p>
+
+<p>My mother needed to attend a training program for her job in the city, and I went along with her. To get there, <mark>we had to walk for an entire day.</mark></p>
+
+<p>We spent that night at what people called a hotel. Looking back, I’m not even sure it was a hotel. It was someone’s house where travelers could stay overnight.</p>
+
+<p>And the bedsheets and blankets? Did they ever wash those things between guests?</p>
+
+<p class="ibw-aside">I have my doubts!</p>
+
+<p>Anyway, we spent the night there, and the following morning I finally got to ride a bus.</p>
+
+<p>I still remember the smell of diesel. <mark>Even today, that smell reminds me of arriving in the city for the first time.</mark></p>
+
+<p>I remember looking out the window and seeing people selling cucumbers, carrying pots on their heads. Vehicles were moving everywhere. People were walking in every direction. Everything was new to me.</p>
+
+<p>And then something rather funny happened.</p>
+
+<p>At one point, the bus stopped, and I needed to cross the road. But I was afraid to walk in front of it because I thought the bus might hit me.</p>
+
+<p class="ibw-beat ibw-beat--xl">The bus was parked.</p>
+
+<p class="ibw-aside">I didn’t understand that!</p>
+
+<p>I remember standing there, worried that it would suddenly move and run me over.</p>
+
+<p>That was how unfamiliar I was with things that seemed perfectly ordinary to everyone around me.</p>
+
+<header class="ibw-sec" id="the-cone"><span class="ibw-num">05 / After the SLC</span><h2>The ice cream cone</h2></header>
+
+<p>A few years later, after completing my School Leaving Certificate, I went to the city and had another memorable experience.</p>
+
+<p>One of my relatives offered me ice cream.</p>
+
+<p>Of course I said yes.</p>
+
+<p>They gave me ice cream in a cone. I ate the ice cream and threw the cone away.</p>
+
+<p class="ibw-beat"><mark>I had absolutely no idea the cone was edible!</mark></p>
+
+<p>I thought it was just something they used to hold the ice cream. My relatives laughed at me, and I remember feeling rather embarrassed.</p>
+
+<p>I laugh about it now, too.</p>
+
+<aside class="ibw-note ibw-reveal">
+  <span class="ibw-label">For perspective</span>
+  <p>Folks, we’re talking about a little over twenty years ago. Not fifty or sixty years ago.</p>
+</aside>
+
+<header class="ibw-sec" id="email"><span class="ibw-num">06 / Kathmandu, around 2003</span><h2>“What’s an email address?”</h2></header>
+
+<p>Around 2003, when I was getting to know Kathmandu, one of my friends asked whether I had an email address.</p>
+
+<figure class="ibw-dialog ibw-dialog--me ibw-reveal">
+  <p class="ibw-bubble"><span class="ibw-say">“What’s an email address?”</span></p>
+</figure>
+
+<p>He took me to a cybercafé, paid for some computer time, and helped me create an account.</p>
+
+<p>I remember looking at it and wondering what exactly I was supposed to do next.</p>
+
+<p>Who was I going to email? Who would email me? Why would anybody want to send me a message through a computer?</p>
+
+<p>I had no idea.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>And somehow, over the years, that curiosity about things I didn’t understand became a fairly large part of my life.</p></blockquote></figure>
+
+<p>I wanted to know how computers worked, what people were doing with the internet, and what new technologies were appearing.</p>
+
+<p>And whenever I learned something, I wanted to write about it.</p>
+
+<p>I wasn’t thinking about becoming a technology expert. I was just interested, and perhaps I remembered <mark>what it felt like to be the person who didn’t know where to begin.</mark></p>
+
+<header class="ibw-sec" id="another-world"><span class="ibw-num">07 / The view from the village</span><h2>Another world</h2></header>
+
+<p>Growing up, I used to imagine that people who lived in big cities were very different from us.</p>
+
+<p>They attended expensive schools, spoke fluent English, had educated parents, worked in important organizations, and lived in beautiful homes.</p>
+
+<p>To the boy from Balakhu, they seemed to belong to another world.</p>
+
+<p>I never dreamed of working at Microsoft. I hadn’t even heard of Microsoft when I was growing up. Harvard certainly wasn’t somewhere I imagined I’d study.</p>
+
+<figure class="ibw-pull ibw-pull--center ibw-reveal"><blockquote><p>Those things were so far removed from my life that I didn’t even know what to dream about.</p></blockquote></figure>
+
+<p>I was simply trying to figure out whatever came next.</p>
+
+<header class="ibw-sec" id="america"><span class="ibw-num">08 / America, 2012</span><h2>Two conversations</h2></header>
+
+<p>When I arrived in America in 2012, I found myself in another unfamiliar world.</p>
+
+<figure class="ibw-photo ibw-photo--tall ibw-reveal">
+  <img src="/assets/images/blog-statue-of-liberty-2012.jpg" width="1200" height="1599" loading="lazy" decoding="async" alt="Aashis Luitel smiling in a crowd of visitors in front of the Statue of Liberty.">
+  <figcaption><span class="ibw-when">New York, September 2012</span>My first time at the Statue of Liberty.</figcaption>
+</figure>
+
+<p>I had very little money and knew very few people around me. I later discovered that I had relatives living in many states, but at the time, I didn’t even know some of them existed.</p>
+
+<p>I didn’t know whom to ask for help.</p>
+
+<p>There are two people I will remain grateful to for the rest of my life. Whatever they may think of me today, I haven’t forgotten what they did when I needed support.</p>
+
+<p>But much of those early years involved finding things out for myself.</p>
+
+<p>I remember two conversations particularly well.</p>
+
+<p>About two weeks after I arrived in America, a friend from my +2 days in Nepal called me.</p>
+
+<p>He asked,</p>
+
+<figure class="ibw-dialog ibw-reveal">
+  <p class="ibw-bubble"><span class="ibw-say" lang="ne-Latn">“Ani ta ghanta hando ho?”</span><span class="ibw-tr">“So, you’re working hourly wages now?”</span></p>
+</figure>
+
+<p>I remember that question very clearly.</p>
+
+<p>Now, there’s nothing wrong with working an hourly job. People do whatever work they need to do, especially when they’re young and trying to establish themselves in another country.</p>
+
+<p>But I took it as an insult.</p>
+
+<p>Perhaps he didn’t mean it that way. Maybe he was just asking what I was doing. But at the time, it felt as though he had already decided what someone like me could accomplish in America.</p>
+
+<p class="ibw-beat"><mark>Six months later, I joined the United States Navy.</mark></p>
+
+<p>And the funny thing is, years later, that same friend joined the military himself.</p>
+
+<p class="ibw-aside">Life is interesting, isn’t it?</p>
+
+<p>There was another Nepali friend who was already living here. I wanted to continue my education, so I asked him how to get back into school.</p>
+
+<p>He told me it was a long process.</p>
+
+<figure class="ibw-dialog ibw-reveal">
+  <p class="ibw-bubble"><span class="ibw-say">“You have to learn English, pass IELTS, complete prerequisites. It’s a long way, bro.”</span></p>
+</figure>
+
+<p>I listened.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>But I wasn’t asking whether it was difficult. I wanted to know how to begin.</p></blockquote></figure>
+
+<p>Which university should I contact? What were the requirements? What should I do first?</p>
+
+<p>I never really got those answers.</p>
+
+<p>So I stopped asking him and began figuring things out myself.</p>
+
+<p>About five years later, I was halfway through my doctorate in engineering. If I remember correctly, he was finishing his master’s around that time.</p>
+
+<p>Everyone has a different educational journey, and I have no idea what else was happening in his life. That’s not what I remember about the experience.</p>
+
+<p>What I remember is going to someone for directions and coming away feeling that the road was too long to even attempt.</p>
+
+<figure class="ibw-pull ibw-pull--center ibw-pull--hero ibw-reveal"><blockquote><p>I needed to know where to start walking.</p></blockquote></figure>
+
+<p>So I started looking.</p>
+
+<header class="ibw-sec" id="own-way"><span class="ibw-num">09 / Navy, Microsoft, Harvard, the classroom</span><h2>Finding my own way</h2></header>
+
+<p>And that became something of a habit.</p>
+
+<p>When I didn’t understand something, I’d look it up. When one person couldn’t help, I’d try another approach. I made mistakes, took unnecessary detours, and sometimes spent far too long figuring out things that someone else could probably have explained in ten minutes.</p>
+
+<p>But eventually, <mark>I became comfortable finding my own way.</mark></p>
+
+<p>I served seven years in the Navy, continued studying, and earned a doctorate in engineering. I moved into cybersecurity without knowing exactly where it would take me.</p>
+
+<p>Eventually, I had the opportunity to work at Microsoft.</p>
+
+<p>While there, I worked on cloud security, government security requirements, privacy, and compliance. Some of those areas weren’t things I’d planned to specialize in. <mark>The job demanded them, so I learned.</mark></p>
+
+<p>Then came generative AI.</p>
+
+<p>When an internal opportunity opened up to work on Security Copilot, I applied and was fortunate to be selected. My work expanded into responsible AI, sovereign cloud, privacy, and data governance.</p>
+
+<p>Along the way, with Microsoft’s support, I also had the opportunity to study at Harvard.</p>
+
+<p>I started teaching at universities, too. Over time, I found myself teaching artificial intelligence to doctoral students while continuing to work in the technology industry.</p>
+
+<p>Even now, some of that feels rather unbelievable when I think about where I started.</p>
+
+<figure class="ibw-road ibw-reveal" aria-label="The road so far">
+  <figcaption class="ibw-label">The road so far</figcaption>
+  <ol>
+    <li><span class="ibw-when">Balakhu</span><span class="ibw-what">A mud-and-stone school. No road, no electricity.</span></li>
+    <li><span class="ibw-when">Around 12</span><span class="ibw-what">A full day’s walk, then a first bus ride.</span></li>
+    <li><span class="ibw-when">After the SLC</span><span class="ibw-what">The ice cream cone, thrown away.</span></li>
+    <li><span class="ibw-when">Around 2003</span><span class="ibw-what">A first email address, at a Kathmandu cybercafé.</span></li>
+    <li><span class="ibw-when">2012</span><span class="ibw-what">America, with very little money.</span></li>
+    <li><span class="ibw-when">Six months later</span><span class="ibw-what">The United States Navy, for seven years.</span></li>
+    <li><span class="ibw-when">Microsoft</span><span class="ibw-what">Cloud security and compliance, then Security Copilot.</span></li>
+    <li><span class="ibw-when">Harvard</span><span class="ibw-what">With Microsoft’s support.</span></li>
+    <li><span class="ibw-when">Today</span><span class="ibw-what">Teaching AI to doctoral students.</span></li>
+  </ol>
+</figure>
+
+<header class="ibw-sec" id="not-so-different"><span class="ibw-num">10 / What I discovered</span><h2>They weren’t so different</h2></header>
+
+<p>But something else happened during those years.</p>
+
+<p>I began meeting the very people I’d once imagined were so different from me.</p>
+
+<p>People who grew up in wealthy families, went to excellent schools, worked at large companies, studied at famous universities, and lived the kinds of lives I used to wonder about.</p>
+
+<p>And you know what I discovered?</p>
+
+<p class="ibw-beat ibw-beat--xl">They weren’t so different.</p>
+
+<p>Some were exceptionally smart. Some were ordinary. Some were generous, and some were difficult. They worried about their families, their health, their jobs, and their futures.</p>
+
+<p><mark>They had problems of their own.</mark></p>
+
+<p>For so many years, I’d imagined there was another kind of life waiting somewhere beyond the world I grew up in.</p>
+
+<p>And when I finally got to experience some of it, I discovered that the people there were dealing with many of the same things everyone else was.</p>
+
+<p>Of course, money and opportunity matter. I would never pretend they don’t.</p>
+
+<header class="ibw-sec" id="been-there"><span class="ibw-num">11 / On having fun</span><h2>Been there, done that</h2></header>
+
+<p>Today, I live comfortably. I have a home, financial security, and work that I genuinely enjoy. Thank God, I can buy things I once couldn’t afford. I can travel if I want to, eat wherever I like, and spend money on things that interest me.</p>
+
+<p>I’m fortunate, and I know it.</p>
+
+<p>But here’s the funny part.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>Now that I can afford many of the things I once wanted, I don’t particularly want them anymore.</p></blockquote></figure>
+
+<p>At least not in the same way.</p>
+
+<p>I’m perfectly happy being at home.</p>
+
+<p>I enjoy my work, my books, my research, my students, and my quiet routine.</p>
+
+<p>And apparently, that can be difficult for some people to understand.</p>
+
+<p>I’ve heard comments like:</p>
+
+<div class="ibw-heard ibw-reveal">
+  <p class="ibw-bubble ibw-bubble--them"><span class="ibw-say">“What’s the point of making money if you don’t know how to have fun?”</span></p>
+  <p class="ibw-bubble ibw-bubble--them"><span class="ibw-or">Or,</span> <span class="ibw-say">“You work too much. Go out and enjoy life.”</span></p>
+</div>
+
+<p>Some probably think Aashis has become too serious, or that he doesn’t know how to socialize anymore.</p>
+
+<p class="ibw-beat">Come on, folks!</p>
+
+<p>I know how to have fun.</p>
+
+<p>Some of you may remember my <em>Travel in Twenties</em> blog and Instagram. I spent a good part of my twenties traveling, exploring, meeting people, and having a wonderful time. There were even news stories about some of those travels.</p>
+
+<p>I enjoyed that period of my life tremendously.</p>
+
+<p class="ibw-beat">Been there, done that.</p>
+
+<p>And if I want to do those things again, I can.</p>
+
+<p>I haven’t forgotten how to enjoy life. <mark>I just don’t need to enjoy it exactly the way I did at 25.</mark></p>
+
+<div class="ibw-then-now ibw-reveal">
+  <div><span class="ibw-label">At 25</span><p>Back then, I wanted to see what was out there.</p></div>
+  <div><span class="ibw-label">On the way to 40</span><p>Now, quite often, I’d rather be home.</p></div>
+</div>
+
+<p>I don’t feel that I’m missing anything.</p>
+
+<p>And I’m not sitting around waiting for retirement to start enjoying life, either. I’m enjoying much of it right now.</p>
+
+<header class="ibw-sec" id="newsaholic"><span class="ibw-num">12 / Mornings</span><h2>A workaholic. And a newsaholic.</h2></header>
+
+<p>I happen to be a bit of a workaholic.</p>
+
+<p>And a newsaholic, if that’s even a word.</p>
+
+<p>My mornings usually begin with NPR and <em>The New York Times</em>. I go through the headlines, listen to the news, and then move on to podcasts.</p>
+
+<p class="ibw-tags" aria-label="Politics, technology, international affairs, economics, public policy."><span aria-hidden="true">Politics</span><span aria-hidden="true">Technology</span><span aria-hidden="true">International affairs</span><span aria-hidden="true">Economics</span><span aria-hidden="true">Public policy</span></p>
+
+<p>Whatever happens to interest me.</p>
+
+<p>Because I work from home, I often have something playing in the background. Sometimes I spend a couple of hours listening to interviews and discussions while going about my day.</p>
+
+<p>I even listen to podcasts in the shower.</p>
+
+<p class="ibw-aside">Yes, in the shower.<br>I know. It’s ridiculous.<br>But I enjoy it.</p>
+
+<p>And over time, this habit has influenced my professional decisions more than I could have imagined.</p>
+
+<p>I started noticing where things were going.</p>
+
+<p>Cybersecurity was becoming increasingly important when I was leaving the military, so I pursued it.</p>
+
+<p>At Microsoft, government cloud security and compliance became important to the work I was doing, so I learned those areas.</p>
+
+<p>Then generative AI began changing the industry, and I wanted to understand that, too.</p>
+
+<p>I didn’t have some extraordinary career plan that I’d developed years earlier. There was luck involved, and people gave me opportunities. Some decisions worked out better than others.</p>
+
+<p class="ibw-beat">But I was paying attention.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>One thing I’ve learned is that being good at your current job doesn’t necessarily prepare you for the next one.</p></blockquote></figure>
+
+<p>The world changes, and sometimes the skills that brought you this far aren’t enough to take you further.</p>
+
+<p>That’s partly why I spend so much time reading, learning, and following what’s happening around the world.</p>
+
+<p>I enjoy knowing things, and <mark>I don’t want to lose that curiosity.</mark></p>
+
+<header class="ibw-sec" id="other-side"><span class="ibw-num">13 / Seven years</span><h2>The side most people didn’t see</h2></header>
+
+<p>Now, while all of this was happening professionally, there was another side of my life that most people didn’t see.</p>
+
+<p>For the last seven years, I’ve experienced more physical pain and health problems than at any other point in my life.</p>
+
+<p>Some days were extremely difficult.</p>
+
+<p>But there were meetings to attend, projects to deliver, students waiting for feedback, and responsibilities that didn’t disappear simply because I wasn’t feeling well.</p>
+
+<p>So I organized my life around everything.</p>
+
+<p class="ibw-loop ibw-reveal" aria-label="Doctor's appointments, work, teaching, research, pain, recovery, and then back to work."><span aria-hidden="true">Doctor’s appointments</span><span aria-hidden="true">Work</span><span aria-hidden="true">Teaching</span><span aria-hidden="true">Research</span><span aria-hidden="true">Pain</span><span aria-hidden="true">Recovery</span><span aria-hidden="true" class="ibw-loop-back">And then back to work</span></p>
+
+<p>I was fortunate that much of what I did could be done from a computer.</p>
+
+<p>But I also became very good at working through discomfort.</p>
+
+<p class="ibw-beat">Perhaps too good.</p>
+
+<p>There were times when I should probably have rested more, but I kept going because I genuinely enjoyed what I was doing.</p>
+
+<p>Work had become such a large part of my life that <mark>I didn’t always know what to do with myself when I wasn’t working.</mark></p>
+
+<p class="ibw-beat">Then came October 5.</p>
+
+<p>The surgery went well, and my leg pain has improved considerably. I’m recovering at home, walking a little each day and trying not to do too much.</p>
+
+<p>But lying in that hospital bed was an unusual experience.</p>
+
+<p>For years, I’d spent so much time following what was happening elsewhere. I could tell you what was being discussed in Washington, what was happening in AI, and which public policies were being debated.</p>
+
+<p>Yet <mark>I hadn’t spent much time looking back at my own life.</mark></p>
+
+<p>I don’t want to make one night in the hospital sound more dramatic than it was.</p>
+
+<figure class="ibw-pull ibw-pull--center ibw-pull--hero ibw-reveal"><blockquote><p>It was surgery, not a spiritual retreat.</p></blockquote></figure>
+
+<p>But it interrupted my routine long enough for me to think about how much had happened during the last several years.</p>
+
+<p>The pain I’d been dealing with. The work I’d done. The things I’d learned. The people I’d met. And the many people I hadn’t spoken to in years.</p>
+
+<p>And I realized something about myself.</p>
+
+<p class="ibw-beat"><mark>I’ve become very comfortable being on my own.</mark></p>
+
+<p>Perhaps more comfortable than some people expect.</p>
+
+<header class="ibw-sec" id="saying-no"><span class="ibw-num">14 / Somewhere between 35 and 40</span><h2>Learning to say no</h2></header>
+
+<p>You know those videos on Facebook and TikTok where people in their sixties or seventies offer advice to younger people?</p>
+
+<p>One thing they often say is, “Learn how to say no.”</p>
+
+<p>Well, I’m somewhere between 35 and 40, and I’ve already started practicing.</p>
+
+<p>I don’t accept every invitation. I don’t join every conversation. I don’t feel obligated to answer every phone call or respond to every message immediately.</p>
+
+<div class="ibw-triad ibw-reveal">
+  <p>Sometimes I’m busy.</p>
+  <p>Sometimes I’m tired.</p>
+  <p>And sometimes I have absolutely nothing planned, <mark>but I’d like to keep it that way.</mark></p>
+</div>
+
+<p>I know that can disappoint people.</p>
+
+<p>There are friends I haven’t spoken with in years, relatives I’ve lost touch with, and messages I’ve meant to answer but never did.</p>
+
+<p>I’m not proud of all those missed conversations.</p>
+
+<p>There are people I care about who probably deserve more of my attention.</p>
+
+<figure class="ibw-pull ibw-reveal"><blockquote><p>But I also don’t think that caring about someone means being available whenever they want to talk.</p></blockquote></figure>
+
+<p>I enjoy my own company, and I’ve become more selective about how I spend my time.</p>
+
+<p>Some may call that selfish.</p>
+
+<p class="ibw-aside">Maybe sometimes it is.</p>
+
+<p><mark>I’m still learning where independence becomes unnecessary distance.</mark> There are times when I probably should make more effort to stay connected.</p>
+
+<p>But I also know why I’ve become this way.</p>
+
+<p>I spent a good part of my early years in America figuring things out without knowing whom to call.</p>
+
+<p>I remember asking people for guidance and coming away with more questions. I remember being alone with problems that seemed much larger than I knew how to handle.</p>
+
+<p>And I remember the few people who genuinely helped.</p>
+
+<p>Those experiences stayed with me.</p>
+
+<p>When you spend years finding your own way, you eventually become accustomed to it. You stop expecting someone else to solve things for you. You become comfortable making decisions without asking everyone what they think.</p>
+
+<p>And perhaps, after finally reaching a point where you have more freedom over your own life, <mark>you become protective of that freedom.</mark></p>
+
+<p>I know I have.</p>
+
+<p>That doesn’t mean I don’t appreciate people.</p>
+
+<p>It doesn’t mean I’ve forgotten where I came from or the people I’ve known over the years.</p>
+
+<p>Sometimes I wonder, though, how different my relationships would be if I were still living in Balakhu.</p>
+
+<p>How many of us would even know one another?</p>
+
+<p class="ibw-beat">Probably far fewer.</p>
+
+<p>That’s not an accusation. People meet through circumstances, opportunities, and the places life takes them. Many of you didn’t know me during those early years, just as I didn’t know you.</p>
+
+<p>But I remember the years when I had very few people to turn to.</p>
+
+<p>And today, when my phone is full of messages or my calendar is full of requests, I sometimes think about how much life has changed.</p>
+
+<p>I’m grateful to know so many people.</p>
+
+<p>But I can’t keep up with everyone, and I don’t want every relationship to become another obligation on my calendar.</p>
+
+<header class="ibw-sec" id="lost-touch"><span class="ibw-num">15 / For now</span><h2>If we’ve lost touch</h2></header>
+
+<aside class="ibw-callout ibw-reveal">
+  <p>If we’ve lost touch, please don’t assume I’ve forgotten you or that I think I’m too important to talk.</p>
+  <p class="ibw-callout-short">I don’t.</p>
+</aside>
+
+<p>I simply enjoy the life I’ve built, including the quieter parts of it.</p>
+
+<ul class="ibw-likes" aria-label="Things I like">
+  <li>I like working.</li>
+  <li>I like reading.</li>
+  <li>I like teaching.</li>
+  <li>I like writing.</li>
+  <li>I like following what’s happening around the world.</li>
+</ul>
+
+<p>And <mark>I like having evenings when I don’t have to do anything for anybody.</mark></p>
+
+<p>I spent much of my younger life imagining what it would be like to have more choices.</p>
+
+<p class="ibw-beat">Now I have them.</p>
+
+<p>And quite often, I choose to do less socially than people expect.</p>
+
+<p>That’s how I want to spend this part of my life.</p>
+
+<p>I don’t know whether I’ll feel the same way ten years from now. Perhaps I’ll travel more again. Perhaps I’ll slow down professionally. Perhaps I’ll become one of those people who calls everyone every weekend.</p>
+
+<p class="ibw-aside">Who knows?</p>
+
+<p class="ibw-beat">For now, I’m comfortable.</p>
+
+<p>Not because I’ve accomplished everything I want to accomplish. There are still plenty of things I want to learn, places I want to visit, and work I want to do.</p>
+
+<p>And certainly not because life has been easy.</p>
+
+<p>The last seven years have reminded me of that often enough.</p>
+
+<p>But I’m satisfied with much of what I have, and <mark>I don’t feel the same urgency to chase every experience or meet every expectation that I once did.</mark></p>
+
+<p>When I shared the news about my surgery, many of you reached out.</p>
+
+<p>Some called. Some sent messages. Others wished me a quick recovery.</p>
+
+<p>I appreciate those messages. I may not respond to everyone individually, but I do read them, and I know they come from a good place.</p>
+
+<p>Perhaps writing this is one way of catching up with you.</p>
+
+<p>It’s been a long time since I’ve had a proper conversation with many of you. You’ve seen bits and pieces of my life over the years, but perhaps not much of what happened in between.</p>
+
+<p>And there is a lot I haven’t told you.</p>
+
+<p>Mistakes, disappointments, opportunities I missed, people who helped me, people I’ve lost touch with, and decisions I look back on rather differently now.</p>
+
+<p class="ibw-aside">Maybe I’ll write about those another day.</p>
+
+<p>For now, I’m home recovering, walking a little more each day, and trying to get used to a slower routine.</p>
+
+<p>NPR and <em>The New York Times</em> are still keeping me company. There are podcasts waiting, books I want to read, and work I’ll return to when I’m ready.</p>
+
+<p>And there’s a quiet home that I very much enjoy.</p>
+
+<p>Sometimes I think about the school in Balakhu, the long walk with my mother, the first bus ride, and that strange hotel where we spent the night.</p>
+
+<p>I remember the excitement of seeing things I’d never encountered before.</p>
+
+<p>I remember wondering what life was like for people who lived in the cities, studied at good universities, and had opportunities that seemed so far beyond my reach.</p>
+
+<p>I’ve had the good fortune to experience many of those things now.</p>
+
+<p>And after all these years, <mark>I still enjoy learning something new.</mark></p>
+
+<p>I just don’t feel the need to go somewhere every time I have a free afternoon.</p>
+
+<p>If we haven’t spoken in a while, I hope this gives you a little sense of where I’ve been.</p>
+
+<div class="ibw-close ibw-reveal">
+  <p class="ibw-close-1">I’m still around, folks.</p>
+  <p class="ibw-close-2">Just enjoying life in my own way.</p>
+  <p class="ibw-close-3">Take care.</p>
+  <p class="ibw-sign">Aashis</p>
+</div>
+
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('.ibw');
+  if (!root) return;
+
+  // reading progress bar
+  var bar = root.querySelector('.ibw-progress span');
+  function progress() {
+    if (!bar) return;
+    var r = root.getBoundingClientRect();
+    var total = r.height - window.innerHeight * 0.5;
+    var p = Math.min(1, Math.max(0, -r.top / (total > 0 ? total : 1)));
+    bar.style.transform = 'scaleX(' + p + ')';
+  }
+  window.addEventListener('scroll', progress, { passive: true });
+  window.addEventListener('resize', progress);
+  progress();
+
+  // reveal on scroll
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  root.classList.add('ibw-js');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  root.querySelectorAll('.ibw-reveal').forEach(function (el) { io.observe(el); });
+})();
+</script>
