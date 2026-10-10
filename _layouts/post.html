@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 {% assign article_description = page.description | default: "An essay by Aashis Luitel on AI governance, cybersecurity, public-sector technology and practice." %}
-{% assign article_image = page.image | default: "/assets/images/aashis-hero.jpg" %}
+{% assign article_image = page.social_image | default: page.image | default: "/assets/images/aashis-hero.jpg" %}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
